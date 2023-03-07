@@ -54,8 +54,8 @@ export const placeHolder = "./imagesshrunk/loader.gif"
 
 export const navLinks = [
   {
-    title: 'home',
-    url: '#home',
+    title: 'console',
+    url: '#console',
   },
   {
     title: 'work',

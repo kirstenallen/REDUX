@@ -1,11 +1,48 @@
+  import React, { useEffect, useState } from "react";
+    import { motion, useCycle } from "framer-motion";
+    const variants = {
+      open: { opacity: 1 },
+      closed: {opacity:0 },
+    }
+
+
 export default function About() {
+const [isOpen, toggleOpen] = useCycle(true, false);
+
+const [isActive, setActive] = useState(true);
+
+const updateZLayer = () => {
+     let workWindow = document.getElementById('work');
+  if (isActive) {
+
+      workWindow.style.zIndex='999';
+
+  } else {
+    workWindow.style.zIndex='1';
+  }
+}
+
 
 return (
-  <section className="about courier-prime w-12/12 m-auto text-gray-400 bg-gray-100 body-font">
+
+<motion.div drag
+dragMomentum={true}
+whileFocus={{ zIndex: 999 }}
+  whileTap={{ zIndex: 999 }}
+  initial= {true }
+  exit={{zIndex:999}}
+  initial={{ opacity: 0, scale: 0.5, left:'-100%', top:'unset'}}
+    animate={{ opacity: 1, scale: 1, top:0, left:'100px'}}
+    exit={{ opacity: 0, scale: 0.5, left:'-100%', top:'unset'}}
+    transition={{ duration: 0.5 }}
+
+className="container w-12/12    relative text-center " id="about" >
     <div className="container w-full relative mx-auto text-center ">
         <div className="imagesPre flex  flex-row flex-nowrap align-middle content-between">
-          <div className="courier-prime text-left w-10/12 px-5 pt-2 pb-10">section information here</div>
-          <div className="text-right w-2/12 px-5 pt-2 pb-10 ">x</div>
+          { isActive ? 'workWindow is active' : '' }
+
+          <div className="courier-prime text-left w-10/12 ">section information here</div>
+          <div className="text-right w-2/12 ">x</div>
         </div>
     <div className="images bg-blue-100   sm:w-full  m-auto relative overflow-auto">
           <div className="social sticky top-0 grid grid-cols-9 gap-1 content-evenly mx-auto bg-gray-200 py-5">
@@ -40,29 +77,40 @@ return (
       <div className="w-10/12 mx-auto text-gray-900">
           <br/>
           <br/>
-          Kirsten is a designer/developer living in Austin, TX & is currently looking for <span className="bold code-green">remote</span>/<span className="bold code-yellow">freelance</span> work.
+          Kirsten is a graphic designer and front end developer living in Austin, TX looking for <span className="bold code-green">remote</span> work.
           <br/>
           <br/>
-        <h1 className="sm:text-4xl text-4xl font-medium title-font mb-4 text-gray-900">
-        <div className="sectionHeader courier-prime text-xl"><p>We Can Make Anything We Want</p></div>
-        </h1>
-          <br/>
-          <br/>
-            <ul className="text-left list-disc grid grid-cols-2 mx-auto block w-10/12">
-            <li>designer</li>
-            <li>illustrator</li>
-            <li>prototyper</li>
-            <li>developer</li>
-            <li>media designer</li>
-            <li>photographer</li>
-            <li>videographer</li>
-            <li>3d animator</li>
-            <li>juggler</li>
-            <li>carpenter</li>
-            <li>stand up comedian</li>
-            <li>anything at all</li>
+            <h1 className="sm:text-4xl text-4xl font-medium title-font mb-4 text-gray-900">
+            <div className="sectionHeader courier-prime text-xl"><p>experience / hobbies</p></div>
+            </h1>
+            <br/>
+            <br/>
+            <ul className="text-left list-disc grid grid-cols-2 mx-auto block w-8/12">
+            <li>graphic design</li>
+            <li>illustration</li>
+            <li>motion graphics</li>
+            <li>front-end developer</li>
+            <li>3D design</li>
+            <li>juggling</li>
+            <li>carpentry</li>
+            <li>stand up comedy</li>
             </ul>
             <br/>
+            <h1 className="sm:text-4xl text-4xl font-medium title-font mb-4 text-gray-900">
+            <div className="sectionHeader courier-prime text-xl"><p>specifics</p></div>
+            </h1>
+            <br/>
+            <br/>
+            <ul className="text-left list-disc grid grid-cols-2 mx-auto block w-8/12">
+            <li>Full Adobe Creative Suite Mastery</li>
+            <li>Photoshop / Illustrator / After Effects / XD / InDesign etc.</li>
+            <li>Blender / Maxon Cinema 4D</li>
+            <li>Github / VS Code</li>
+            <li>HTML / CSS / JS / Node / React</li>
+            <li>Microsoft Office Suite / Google Docs / Sheets / Etc</li>
+            <li>Asana / Wrike / Airtable</li>
+            <li>also a big video game nerd</li>
+            </ul>
             <br/>
         </div>
         <h1 className="sm:text-4xl text-4xl font-medium title-font mb-4 text-gray-900">
@@ -91,6 +139,7 @@ return (
       </div>
       </div>
       </div>
-      </section>
+      </motion.div>
+
 )
 }

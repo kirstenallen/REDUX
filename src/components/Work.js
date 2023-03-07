@@ -3,7 +3,7 @@ import { projects } from "../data";
 import { placeHolder } from "../data";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css';
-
+import { motion } from "framer-motion";
 
 const { useState } = React;
 
@@ -11,7 +11,7 @@ const height = "100%";
 const width = "auto";
 
 export default function Work() {
-  	const [lightboxDisplay, setLightBoxDisplay] = React.useState(false);
+    const [lightboxDisplay, setLightBoxDisplay] = React.useState(false);
     const [imageToShow, setImageToShow] = useState("");
     const [altToShow, setAltToShow] = useState("");
     const showAlt = (alt) => {
@@ -30,20 +30,36 @@ export default function Work() {
           setLightBoxDisplay(false);
         }, delayInMilliseconds);
     };
+
+
   return (
-    <section  className="w-12/12 m-auto text-gray-400 bg-gray-100 body-font">
-      <div className="container w-full relative mx-auto text-center ">
-        <div className="imagesPre flex  flex-row flex-nowrap align-middle content-between">
-        <div className="courier-prime text-left w-10/12 px-5 pt-2 pb-10">section information here</div>
-        <div className="text-right w-2/12 px-5 pt-2 pb-10 ">x</div>
+
+
+
+
+    <motion.div drag
+      dragMomentum={true}
+      whileFocus={{ zIndex: 999 }}
+        whileTap={{ zIndex: 999 }}
+        initial={{ opacity: 0, scale: 0, left:'-200%', top:'unset'}}
+          animate={{ opacity: 1, scale: 1, top:0, left:'100px'}}
+          transition={{ duration: 0.5 }}
+           exit={{ opacity: 0, scale: 0, left:'-200%', top:'unset'}}
+          key="console"
+     className="absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-1/2 text-left " id="console">
+              <div className="imagesPre flex flex-row flex-nowrap align-top ">
+                <div className=" text-left w-8/12 ">welcome.exe
+              </div>
+                  <div className="w-4/12 inline-block text-right text-red-800" style={{zIndex:999}}>x</div>
+        <div className="text-right bg-transparent w-2/12  "><a href="#animation">animation</a></div>
         </div>
         <div className="images bg-emerald-100   sm:w-full py-10 px-10 m-auto relative overflow-auto">
           {projects.map((project) => (
-            <div key={project.title} className="projectContainer opacity-90 mt-16 relative">
-            <div className="imagerow relative flex flex-row flex-wrap align-middle justify-start w-full green-border white-bg  ">
+            <div key={project.title} className="projectContainer opacity-80 mt-16 relative">
+            <div id={project.title} className="imagerow relative flex flex-row flex-wrap align-middle justify-start w-full white-bg  ">
               <div className="folder_tab green-border white-bg text-sm font-bold text-gray-800 py-5"> > {project.category}</div>
             {project.images.map((c, i) => (
-              <a className="sm:w-1/2 w-1/3 py-10 mx-autoflex flex-col" key={c} onClick={() => {showImage(c); showAlt(project.description)}}>
+              <a className="sm:w-1/2 w-1/5 py-10 mx-autoflex flex-col" key={c} onClick={() => {showImage(c); showAlt(project.description)}}>
               <img className="w-6/12 mx-auto text-center" src="../imagesshrunk/file402.png" />
               <p className="file_title">{c.split('imagesshrunk/').pop()}</p>
 
@@ -64,7 +80,7 @@ export default function Work() {
           </div>
         : ''}
         </div>
-        </div>
-    </section>
+    </motion.div>
+
   );
 }

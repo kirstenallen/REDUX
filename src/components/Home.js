@@ -1,22 +1,61 @@
-export default function Home() {
+import React, { useState } from 'react';
+    import { motion, AnimatePresence  } from "framer-motion";
 
-return (
-  <section className="w-12/12 m-auto text-gray-400 bg-gray-100 body-font">
-    <div className="container w-full relative mx-auto text-left ">
-        <div className="imagesPre flex  flex-row flex-nowrap align-middle content-between">
-        <div className="courier-prime text-left w-10/12 px-5 pt-2 pb-10">Welcome /error/ TITLE</div>
-        <div className="text-right w-2/12 px-5 pt-2 pb-10 ">x</div>
-        </div>
-          <div className="images bg-black  courier-prime sm:w-full py-10 px-10 m-auto relative overflow-auto">
-          <ul className="welcome">
-          <li>hi</li>
-          <li>resume </li>
-          <li>social media information</li>
-          <li>keep scrolling down <span className="code-green">for more</span> or</li>
-          <li>click the <span className="code-yellow italic">folders</span> to jump</li>
-          </ul>
-          </div>
-      </div>
-    </section>
-)
+
+const Home = params => {
+  return (
+  <>
+  <motion.div drag
+    dragMomentum={true}
+    whileFocus={{ zIndex: 999 }}
+      whileTap={{ zIndex: 999 }}
+      initial={{ opacity: 0, scale: -1, left:'-50%', top:'unset'}}
+        animate={{ opacity: 1, scale: 1, top:0, left:'100px'}}
+        transition={{ duration: 0.5 }}
+         exit={{ opacity: 0, scale: -1, left:'-50%', top:'unset'}}
+        key="console"
+   className="absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-1/2 text-left " id="console">
+            <div className="imagesPre flex flex-row flex-nowrap align-top ">
+              <div className=" text-left w-8/12 ">welcome.exe  {params.setTestState} {params.setHomeShow ? 'true' : 'false'}
+            </div>
+                <div className="w-4/12 inline-block text-right text-red-800" style={{zIndex:999}} onClick={params.toggle} >x</div>
+              </div>
+              <div className="images bg-black  courier-prime sm:w-full py-10 px-10 m-auto relative overflow-auto">
+              <ul className="welcome">
+              <li>hi</li>
+              <li><a>resume</a></li>
+              <li>social media information</li>
+              <li>keep scrolling down <span className="code-green">for more</span> or</li>
+              <li>click the <span className="code-yellow italic">folders</span></li>
+              </ul>
+              </div>
+     </motion.div>
+  </>
+  )
+
 }
+
+export default Home;
+
+//
+// export default function Home() {
+//
+//
+// return (
+// <>
+//           <div className="imagesPre flex  flex-column flex-wrap align-top ">
+//             <div className=" text-left w-12/12 ">welcome.exe {testState}
+//             </div>
+//             </div>
+//             <div className="images bg-black  courier-prime sm:w-full py-10 px-10 m-auto relative overflow-auto">
+//             <ul className="welcome">
+//             <li>hi</li>
+//             <li><a>resume</a></li>
+//             <li>social media information</li>
+//             <li>keep scrolling down <span className="code-green">for more</span> or</li>
+//             <li>click the <span className="code-yellow italic">folders</span></li>
+//             </ul>
+//             </div>
+// </>
+// )
+// }
