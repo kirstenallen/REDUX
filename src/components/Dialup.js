@@ -54,7 +54,7 @@ const onPlayerReady = (event) => {
           key="dialup"
      className="stacked absolute top-1/2 left-1/2 transform translate-x-1/2 w-8/12 h-5/6 translate-y-1/2 text-left sm:!-left-[0px] sm:w-full" id="dialup" >
               <div className="imagesPre flex flex-row flex-nowrap align-top ">
-                <div className=" text-left w-8/12 ">internet.exe
+                <div className=" text-left w-8/12 ">internet.ex e
               </div>
 
               <div className="w-4/12 inline-block text-right text-red-800" style={{zIndex:999}} onClick={params.toggle} >x</div>
