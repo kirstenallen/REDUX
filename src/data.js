@@ -2,27 +2,62 @@ export const projects = [
 
   {
     title: "animation",
-    category: "GIF",
+    category: "GIFs",
     icon: "",
-    description: "Various Adobe Creative Suite Programs Various Adobe Creative Suite Programs Various Adobe Creative Suite Programs Various Adobe Creative Suite Programs",
-    images: [
-      "./imagesshrunk/computer_0005.png",
-      "https://kallenillustration.com/imagesshrunk/pitcher.gif",
-      "https://kallenillustration.com/imagesshrunk/camping.gif",
-      "https://kallenillustration.com/imagesshrunk/overworked_plaincandle_final.gif",
-      "https://kallenillustration.com/imagesshrunk/WHERETHEFUCK.jpg",
-      "https://kallenillustration.com/imagesshrunk/dribbble_workspace_final.jpg",
+    description: "2D Animation",
+    content: [
+      {
+      imageurl: "./imagesshrunk/full0bullstreet_mini.jpg",
+      caption:"Quickship logo for GRAV"
+      },
+      {
+      imageurl: "https://kallenillustration.com/imagesshrunk/pitcher.gif",
+      caption:"Cleaning & Care directions for UPLIFT Desk"
+      },
+      {
+      imageurl: "https://kallenillustration.com/imagesshrunk/camping.gif",
+      caption:"Expressions Experiment in After Effects"
+      },
+      {
+      imageurl: "https://kallenillustration.com/imagesshrunk/dribbble_workspace_final.jpg",
+      caption:"another caption"
+      },
+      {
+      imageurl:"https://kallenillustration.com/imagesshrunk/WHERETHEFUCK.jpg",
+      caption:"another caption part two"
+      }
     ],
   },
   {
     title: "render",
     category: "3DS",
     icon: "",
-    description: "Made in Blender / Spline",
-    images: [
-      "https://via.placeholder.com/151",
-      "https://via.placeholder.com/152",
-      "https://via.placeholder.com/153",
+    description: "Objects & Food Series - Beginner's introduction to 3D Design and Animation",
+    content: [
+      {
+      imageurl: "./imagesshrunk/computer_0005.png",
+      caption:"Happy Devilled Egg"
+      },
+      {
+      imageurl: "https://kallenillustration.com/imagesshrunk/pitcher.gif",
+      caption:"Tomato Basil & Ghost Cheese"
+      },
+      {
+      imageurl: "https://kallenillustration.com/imagesshrunk/camping.gif",
+      caption:"Space Portal Coffee"
+      },
+      {
+      imageurl: "https://kallenillustration.com/imagesshrunk/dribbble_workspace_final.jpg",
+      caption:"Barbie Hotdog"
+      },
+      {
+      imageurl:"https://kallenillustration.com/imagesshrunk/WHERETHEFUCK.jpg",
+      caption:"Box Jellfyish"
+    },
+    {
+      imageurl:"test",
+      caption:"Social Domino"
+    }
     ],
   },
   {
@@ -30,10 +65,28 @@ export const projects = [
     category: "JOB",
     icon: "",
     description: "Various projects with GRAV",
-    images: [
-      "https://via.placeholder.com/154",
-      "https://via.placeholder.com/155",
-      "https://via.placeholder.com/156",
+    content: [
+      {
+      imageurl: "./imagesshrunk/computer_0005.png",
+      caption:"3d blender animation"
+      },
+      {
+      imageurl: "https://kallenillustration.com/imagesshrunk/pitcher.gif",
+      caption:"this is a caption"
+      },
+      {
+      imageurl: "https://kallenillustration.com/imagesshrunk/camping.gif",
+      caption:"look a caption"
+      },
+      {
+      imageurl: "https://kallenillustration.com/imagesshrunk/dribbble_workspace_final.jpg",
+      caption:"another caption"
+      },
+      {
+      imageurl:"https://kallenillustration.com/imagesshrunk/WHERETHEFUCK.jpg",
+
+      caption:"another caption part two"
+      }
     ],
   },
   {
@@ -41,11 +94,57 @@ export const projects = [
     category: "JOB",
     icon: "",
     description: "Various projects with UPLIFTDesk",
-    images: [
-      "https://via.placeholder.com/157",
-      "https://via.placeholder.com/158",
-      "https://via.placeholder.com/159",
+    content: [
+      {
+      imageurl: "./imagesshrunk/computer_0005.png",
+      caption:"Comparison Chart Feature"
+      },
+      {
+      imageurl: "https://kallenillustration.com/imagesshrunk/pitcher.gif",
+      caption:"Homepage Update"
+      },
+      {
+      imageurl: "https://kallenillustration.com/imagesshrunk/camping.gif",
+      caption:"Email and Sale template designs"
+      },
+      {
+      imageurl: "https://kallenillustration.com/imagesshrunk/dribbble_workspace_final.jpg",
+      caption:"Merchanise, Tshirts and more"
+      },
+      {
+      imageurl:"https://kallenillustration.com/imagesshrunk/WHERETHEFUCK.jpg",
+      caption:"another caption part two"
+      }
     ],
+  },
+    {
+      title: "Paintings",
+      category: "ART",
+      icon: "",
+      description: "Personal projects, paintings, etc",
+      content: [
+        {
+        imageurl: "./imagesshrunk/computer_0005.png",
+        caption:"3d blender animation"
+        },
+        {
+        imageurl: "https://kallenillustration.com/imagesshrunk/pitcher.gif",
+        caption:"this is a caption"
+        },
+        {
+        imageurl: "https://kallenillustration.com/imagesshrunk/camping.gif",
+        caption:"look a caption"
+        },
+        {
+        imageurl: "https://kallenillustration.com/imagesshrunk/dribbble_workspace_final.jpg",
+        caption:"another caption"
+        },
+        {
+        imageurl:"https://kallenillustration.com/imagesshrunk/WHERETHEFUCK.jpg",
+
+        caption:"another caption part two"
+        }
+      ],
   }
 
 ];
@@ -66,6 +165,10 @@ export const navLinks = [
     title: 'about',
     url: '#about',
   },
+  {
+    title: 'dialup',
+    url: '#dialup'
+  }
 ];
 
 

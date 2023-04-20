@@ -1,50 +1,32 @@
   import React, { useEffect, useState } from "react";
     import { motion, useCycle } from "framer-motion";
-    const variants = {
-      open: { opacity: 1 },
-      closed: {opacity:0 },
-    }
 
 
-export default function About() {
-const [isOpen, toggleOpen] = useCycle(true, false);
 
-const [isActive, setActive] = useState(true);
+const About = params => {
+// const [isOpen, toggleOpen] = useCycle(true, false);
 
-const updateZLayer = () => {
-     let workWindow = document.getElementById('work');
-  if (isActive) {
 
-      workWindow.style.zIndex='999';
-
-  } else {
-    workWindow.style.zIndex='1';
-  }
-}
 
 
 return (
 
 <motion.div drag
 dragMomentum={true}
-whileFocus={{ zIndex: 999 }}
-  whileTap={{ zIndex: 999 }}
-  initial= {true }
-  exit={{zIndex:999}}
-  initial={{ opacity: 0, scale: 0.5, left:'-100%', top:'unset'}}
+tabIndex={2}
+  initial={{ opacity: 0, scale: 0, left:'-200%', top:'unset'}}
     animate={{ opacity: 1, scale: 1, top:0, left:'100px'}}
-    exit={{ opacity: 0, scale: 0.5, left:'-100%', top:'unset'}}
     transition={{ duration: 0.5 }}
+     exit={{ opacity: 0, scale:0, left:'-50%', top:'unset'}}
+className="stacked absolute top-1/2 left-1/2 transform translate-x-1/2 translate-y-1/2 text-left  " id="about" >
 
-className="container w-12/12    relative text-center " id="about" >
-    <div className="container w-full relative mx-auto text-center ">
-        <div className="imagesPre flex  flex-row flex-nowrap align-middle content-between">
-          { isActive ? 'workWindow is active' : '' }
+<div className="imagesPre flex flex-row flex-nowrap align-top ">
+  <div className=" text-left w-8/12 ">about.exe</div>
+    <div className="w-4/12 inline-block text-right text-red-800" style={{zIndex:999}} onClick={params.toggle} >x</div>
+  </div>
 
-          <div className="courier-prime text-left w-10/12 ">section information here</div>
-          <div className="text-right w-2/12 ">x</div>
-        </div>
-    <div className="images bg-blue-100   sm:w-full  m-auto relative overflow-auto">
+
+    <div className="images bg-blue-100 sm:w-full m-auto relative overflow-auto">
           <div className="social sticky top-0 grid grid-cols-9 gap-1 content-evenly mx-auto bg-gray-200 py-5">
           <a href="https://codepen.io/kirstenallen">
           <span className="fab text-black fa-lg fa-codepen"></span>
@@ -77,7 +59,7 @@ className="container w-12/12    relative text-center " id="about" >
       <div className="w-10/12 mx-auto text-gray-900">
           <br/>
           <br/>
-          Kirsten is a graphic designer and front end developer living in Austin, TX looking for <span className="bold code-green">remote</span> work.
+          Kirsten is a graphic designer and front end developer living in Austin, TX looking for <span className="bold code-green">remote / freelance</span> work.
           <br/>
           <br/>
             <h1 className="sm:text-4xl text-4xl font-medium title-font mb-4 text-gray-900">
@@ -85,11 +67,28 @@ className="container w-12/12    relative text-center " id="about" >
             </h1>
             <br/>
             <br/>
-            <ul className="text-left list-disc grid grid-cols-2 mx-auto block w-8/12">
-            <li>graphic design</li>
+            <ul className="red-hat text-left list-layer-1  mx-auto block w-8/12">
+            <li>graphic design
+            <ul className="px-4 list-layer-2">
+            <li>brand identity</li>
+          <li>logos</li>
+          <li>custom newsletters</li>
+            </ul>
+
+            </li>
+
             <li>illustration</li>
+            <ul>
+            <li>editorial</li>
+          <li>painting</li>
+          <li>doodles of all kinds</li>
+            </ul>
             <li>motion graphics</li>
-            <li>front-end developer</li>
+            <ul>
+            <li>blender</li>
+            <li>after effects</li>
+            </ul>
+            <li>front-end</li>
             <li>3D design</li>
             <li>juggling</li>
             <li>carpentry</li>
@@ -138,8 +137,10 @@ className="container w-12/12    relative text-center " id="about" >
         <br/>
       </div>
       </div>
-      </div>
+
       </motion.div>
 
 )
 }
+
+export default About;
