@@ -1,185 +1,391 @@
 export const projects = [
+{
+title: "UPLIFTDesk",
+category: "JOB",
+icon: "",
+description: "Various projects with UPLIFTDesk",
+content: [
 
-  {
-    title: "animation",
-    category: "GIFs",
-    icon: "",
-    description: "2D Animation",
-    content: [
-      {
-      imageurl: "./imagesshrunk/full0bullstreet_mini.jpg",
-      caption:"Quickship logo for GRAV"
-      },
-      {
-      imageurl: "https://kallenillustration.com/imagesshrunk/pitcher.gif",
-      caption:"Cleaning & Care directions for UPLIFT Desk"
-      },
-      {
-      imageurl: "https://kallenillustration.com/imagesshrunk/camping.gif",
-      caption:"Expressions Experiment in After Effects"
-      },
-      {
-      imageurl: "https://kallenillustration.com/imagesshrunk/dribbble_workspace_final.jpg",
-      caption:"another caption"
-      },
-      {
-      imageurl:"https://kallenillustration.com/imagesshrunk/WHERETHEFUCK.jpg",
-      caption:"another caption part two"
-      }
-    ],
-  },
-  {
-    title: "render",
-    category: "3DS",
-    icon: "",
-    description: "Objects & Food Series - Beginner's introduction to 3D Design and Animation",
-    content: [
-      {
-      imageurl: "./imagesshrunk/computer_0005.png",
-      caption:"Happy Devilled Egg"
-      },
-      {
-      imageurl: "https://kallenillustration.com/imagesshrunk/pitcher.gif",
-      caption:"Tomato Basil & Ghost Cheese"
-      },
-      {
-      imageurl: "https://kallenillustration.com/imagesshrunk/camping.gif",
-      caption:"Space Portal Coffee"
-      },
-      {
-      imageurl: "https://kallenillustration.com/imagesshrunk/dribbble_workspace_final.jpg",
-      caption:"Barbie Hotdog"
-      },
-      {
-      imageurl:"https://kallenillustration.com/imagesshrunk/WHERETHEFUCK.jpg",
-      caption:"Box Jellfyish"
-    },
-    {
-      imageurl:"test",
-      caption:"Social Domino"
-    }
-    ],
-  },
-  {
-    title: "GRAVLabs",
-    category: "JOB",
-    icon: "",
-    description: "Various projects with GRAV",
-    content: [
-      {
-      imageurl: "./imagesshrunk/computer_0005.png",
-      caption:"3d blender animation"
-      },
-      {
-      imageurl: "https://kallenillustration.com/imagesshrunk/pitcher.gif",
-      caption:"this is a caption"
-      },
-      {
-      imageurl: "https://kallenillustration.com/imagesshrunk/camping.gif",
-      caption:"look a caption"
-      },
-      {
-      imageurl: "https://kallenillustration.com/imagesshrunk/dribbble_workspace_final.jpg",
-      caption:"another caption"
-      },
-      {
-      imageurl:"https://kallenillustration.com/imagesshrunk/WHERETHEFUCK.jpg",
+{
+imageurl: "./imagesshrunk/UP/order.gif",
+caption:"Order Confirmation Email Animation",
+year: '2023 - Illustrator / After Effects - UpliftDesk',
+},
+{
+imageurl: "./imagesshrunk/UP/shipping.gif",
+caption:"Shipping Confirmation Email Animation",
+year: '2023 - Illustrator / After Effects - UpliftDesk',
+},
+{
+imageurl: "./imagesshrunk/UP/delivery.gif",
+caption:"Delivery Confirmation Email Animation",
+year: '2023 - Illustrator / After Effects - UpliftDesk',
+},
+{
+imageurl: "./imagesshrunk/UP/assembly.gif",
+caption:"Assembly Instruction Email Animation",
+year: '2023 - Illustrator / After Effects - UpliftDesk',
+},
+{
+imageurl: "./imagesshrunk/UP/icons_uplift.jpg",
+caption:"Iconography",
+year: '2023 - Illustrator - UpliftDesk',
+},
+{
+imageurl: "./imagesshrunk/UP/geekery.jpg",
+caption:"Mousepad Design",
+year: '2023 - Illustrator - UpliftDesk',
+},
+{
+imageurl: "./imagesshrunk/UP/stickers.jpg",
+caption:"Sticker Design",
+year: '2023 - Illustrator - UpliftDesk',
+},
+{
+imageurl: "./imagesshrunk/UP/licenseplate.jpg",
+caption:"UPLIFT Vanity License Plate",
+year: '2023 - Photoshop - UpliftDesk',
+},
+{
+imageurl: "./imagesshrunk/UP/earthday.jpg",
+caption:"Earth Day Posters / Email concept",
+year: '2023 - Illustrator - UpliftDesk',
+},
+{
+imageurl: "./imagesshrunk/UP/comparison_chart.png",
+caption:"Comparison Chart Design and Development",
+year: '2021 - Bigcommerce Javascript Solution - UpliftDesk',
+},
+{
+imageurl: "./imagesshrunk/UP/sale_page.png",
+caption:"Sale Page Redesign",
+year: '2023 - Adobe XD - UpliftDesk',
+},
+],
+},
+{
+title: "Logos",
+category: "BRAND",
+icon: "",
+description: "Branding, Logo and Iconography",
+content: [
+{
+imageurl: "./imagesshrunk/ID/audiopaste_round2_all__v.png",
+caption:"Audiopaste Logo Design",
+year: '2016 - Illustrator - Client',
+},
+{
+imageurl: "./imagesshrunk/ID/fatshire_bezier_reveal.gif",
+caption:"Fatshire Studio Logo",
+year: '2016 - Illustrator - Client',
+},
 
-      caption:"another caption part two"
-      }
-    ],
-  },
-  {
-    title: "UPLIFTDesk",
-    category: "JOB",
-    icon: "",
-    description: "Various projects with UPLIFTDesk",
-    content: [
-      {
-      imageurl: "./imagesshrunk/computer_0005.png",
-      caption:"Comparison Chart Feature"
-      },
-      {
-      imageurl: "https://kallenillustration.com/imagesshrunk/pitcher.gif",
-      caption:"Homepage Update"
-      },
-      {
-      imageurl: "https://kallenillustration.com/imagesshrunk/camping.gif",
-      caption:"Email and Sale template designs"
-      },
-      {
-      imageurl: "https://kallenillustration.com/imagesshrunk/dribbble_workspace_final.jpg",
-      caption:"Merchanise, Tshirts and more"
-      },
-      {
-      imageurl:"https://kallenillustration.com/imagesshrunk/WHERETHEFUCK.jpg",
-      caption:"another caption part two"
-      }
-    ],
-  },
-    {
-      title: "Paintings",
-      category: "ART",
-      icon: "",
-      description: "Personal projects, paintings, etc",
-      content: [
-        {
-        imageurl: "./imagesshrunk/computer_0005.png",
-        caption:"3d blender animation"
-        },
-        {
-        imageurl: "https://kallenillustration.com/imagesshrunk/pitcher.gif",
-        caption:"this is a caption"
-        },
-        {
-        imageurl: "https://kallenillustration.com/imagesshrunk/camping.gif",
-        caption:"look a caption"
-        },
-        {
-        imageurl: "https://kallenillustration.com/imagesshrunk/dribbble_workspace_final.jpg",
-        caption:"another caption"
-        },
-        {
-        imageurl:"https://kallenillustration.com/imagesshrunk/WHERETHEFUCK.jpg",
+{
+imageurl: "./imagesshrunk/ID/jawpl.jpg",
+caption:"JAWPL Logo and Branding",
+year: '2016 - Illustrator - Client',
+},
+{
+imageurl: "./imagesshrunk/ID/jawpl_branding.jpg",
+caption:"JAWPL Logo and Branding",
+year: '2016 - Illustrator and InDesign - Client',
+},
+{
+imageurl: "./imagesshrunk/ID/allstarprinting.jpg",
+caption:"All Star Printing Rebrand",
+year: '2017 - All Star Printing Logo Redesign Proposal - Client',
+},
 
-        caption:"another caption part two"
-        }
-      ],
-  }
+{
+imageurl: "./imagesshrunk/ID/veganaki.jpg",
+caption:"Veganaki Logo Design",
+year: '2016 - Illustrator - Client',
+},
+{
+imageurl: "./imagesshrunk/ID/metaveg.jpg",
+caption:"Metaveg Logo Design",
+year: '2016 - Illustrator - Client',
+},
+{
+imageurl: "./imagesshrunk/ID/cloveandcauldron.jpg",
+caption:"Clove and Cauldron Logo and Branding",
+year: '2022 - Logo and Brand Design - Client',
+},
+{
+imageurl: "./imagesshrunk/ID/cc_bag.jpg",
+caption:"Clove and Cauldron Logo and Branding",
+year: '2022 - Logo and Brand Design - Client',
+},
+{
+imageurl: "./imagesshrunk/ID/weird.jpg",
+caption:"Weird Logo Design",
+year: '2023 - Illustrator - Client',
+},
+{
+imageurl: "./imagesshrunk/ID/weirdjar.jpg",
+caption:"Weird Logo Design",
+year: '2023 - Illustrator - Client',
+},
+{
+imageurl: "./imagesshrunk/ID/icons_grav.png",
+caption:"GRAV Iconography",
+year: '2016 - Illustrator - Client',
+},
+{
+imageurl: "./imagesshrunk/UP/icons_uplift.jpg",
+caption:"Iconography",
+year: '2023 - Illustrator - UpliftDesk',
+},
+],
+},
+{
+title: "animations",
+category: "3D",
+icon: "",
+description: "Projects made in Blender & After Effects",
+content: [
+{
+imageurl: "./imagesshrunk/3D/coffeecup.gif",
+caption:"Space Portal Coffee",
+year: '2022 - Blender - Personal',
+},
+{
+imageurl: "./imagesshrunk/3D/egg.gif",
+caption:"My coworker's favorite lunch!",
+year: '2023 - Blender - Personal',
+},
+{
+imageurl: "./imagesshrunk/3D/hotdog.gif",
+caption:"Barbie Hotdog",
+year: '2023 - Blender - Personal',
+},
+{
+imageurl: "./imagesshrunk/3D/social.gif",
+caption:"Social Dominoes",
+year: '2022 - Blender - Personal',
+},
+{
+imageurl:"./imagesshrunk/3D/soup.gif",
+caption:"Tomato basil soup",
+year: '2023 - Blender - Personal',
+},
+{
+imageurl:"./imagesshrunk/3D/jellyfish.gif",
+caption:"Default Cube Jellyfish",
+year: '2023 - Blender - Personal',
+}
+],
+},
 
+{
+title: "restorations",
+category: "PHOTO",
+icon: "",
+description: "Restorations for Strangers on the Internet",
+content: [
+{
+imageurl: "./imagesshrunk/RT/frankrestoration.jpg",
+caption:"Restoration",
+year: '2020 - Photoshop - Stranger',
+},
+{
+imageurl: "./imagesshrunk/RT/grandparentschurch.jpg",
+caption:"Restoration",
+year: '2020 - Photoshop - Stranger',
+},
+{
+imageurl: "./imagesshrunk/RT/kidsbythecabinet.jpg",
+caption:"Restoration",
+year: '2020 - Photoshop - Stranger',
+},
+{
+imageurl: "./imagesshrunk/RT/womanonmule.jpg",
+caption:"Restoration",
+year: '2020 - Photoshop - Stranger',
+},
+],
+},
+{
+title: "Posters",
+category: "POST",
+icon: "",
+description: "Mixed Media Posters for the Savannah Stage Company and more.",
+content: [
+{
+imageurl: "./imagesshrunk/SC/antigone.jpg",
+caption:"Antigone",
+year: '2023 - Illustrator - Client',
+},
+{
+imageurl: "./imagesshrunk/SC/awakening.jpg",
+caption:"Spring Awakening",
+year: '2023 - Illustrator - Client',
+},
+{
+imageurl: "./imagesshrunk/SC/bachelorette.jpg",
+caption:"Drunken Bachelorette Murder Mystery Party Bus",
+year: '2023 - Illustrator - Client',
+},
+{
+imageurl: "./imagesshrunk/SC/brilliant.jpg",
+caption:"Every Brilliant Thing",
+year: '2023 - Illustrator - Client',
+},
+{
+imageurl: "./imagesshrunk/SC/woods.jpg",
+caption:"Into the Woods",
+year: '2019 - Illustrator - Client',
+},
+{
+imageurl: "./imagesshrunk/SC/desire.jpg",
+caption:"A Streetcar Named Desire",
+year: '2019 - Illustrator - Client',
+},
+{
+imageurl: "./imagesshrunk/SC/charlotte.jpg",
+caption:"Charlotte's Web",
+year: '2019 - Illustrator - Client',
+},
+{
+imageurl: "./imagesshrunk/SC/romeo.jpg",
+caption:"Romeo and Juliet",
+year: '2015 - Photoshop - Client',
+},
+{
+imageurl: "./imagesshrunk/SC/wizard.jpg",
+caption:"Wizard of Oz",
+year: '2015 - Photoshop - Client',
+},
+{
+imageurl: "./imagesshrunk/SC/scarlett.jpg",
+caption:"Scarlett Letter",
+year: '2015 - Photoshop - Client',
+},
+],
+},
+{
+title: "Paintings",
+category: "ART",
+icon: "",
+description: "Paint & Sketchbook",
+content: [
+{
+imageurl: "./imagesshrunk/PT/full0bullstreet_mini.jpg",
+caption:"0 West Bull Street",
+year: '2016 - Woodstain on Wood - Personal - Sold',
+},
+{
+imageurl: "./imagesshrunk/PT/threshold.jpg",
+caption:"Threshold",
+year: '2016 - Oil - Personal',
+},
+{
+imageurl: "./imagesshrunk/PT/vineyardchurc_smallh1.jpg",
+caption:"Back of the Vineyard Church",
+year: '2016 - Oil - Personal - Sold',
+},
+{
+imageurl: "./imagesshrunk/PT/tsquare.jpg",
+caption:"T-Square",
+year: '2016 - Oil - Personal',
+},
+{
+imageurl: "./imagesshrunk/PT/anonymousbuilding4.jpg",
+caption:"T-Square",
+year: '2016 - Oil - Personal',
+}
+],
+},
+
+{
+title: "Illustrations",
+category: "ART",
+icon: "",
+description: "Other random illustrations",
+content: [
+{
+imageurl: "./imagesshrunk/IL/snake.jpg",
+caption:"0 West Bull Street",
+year: '2018 - Ink - Personal - Sold',
+},
+{
+imageurl: "./imagesshrunk/IL/camping.gif",
+caption:"Threshold",
+year: '2016 - Photoshop - Personal',
+},
+{
+imageurl: "./imagesshrunk/IL/pitcher.gif",
+caption:"Picture of Pitcher of Water",
+year: '2016 - Photoshop - Personal',
+},
+{
+imageurl: "./imagesshrunk/IL/workspace.jpg",
+caption:"Virtual Reality Workspace",
+year: '2016 - Photoshop - Personal',
+},
+{
+imageurl: "./imagesshrunk/IL/collage.jpg",
+caption:"Digital Collage",
+year: '2016 - Photoshop - Personal',
+}
+],
+},
+{
+title: "Other",
+category: "ODD",
+icon: "",
+description: "Various personal projects",
+content: [
+{
+imageurl: "./imagesshrunk/OT/cd_design.jpg",
+caption:"CD Design and Package Design",
+year: '2021 - Photoshop - Private Client'
+},
+{
+imageurl: "./imagesshrunk/OT/golden_pinecone.jpg",
+caption:"Golden Pinecone Award - Made for a previous boss",
+year: '2019 - Pinecone and Gold Leaf - Personal',
+},
+{
+imageurl: "./imagesshrunk/OT/dog_toys.jpg",
+caption:"Dog Toy for Cats",
+year: '2016 - Sewing Experiment - Personal',
+}
+],
+},
 ];
 
-export const placeHolder = "./imagesshrunk/loader.gif"
-
+export const placeHolder = "./imagesshrunk/loader.gif";
+export const placeHolderFile = "./imagesshrunk/file402.png";
 export const navLinks = [
-  {
-    title: 'console',
-    url: '#console',
-  },
-  {
-    title: 'work',
-    url: '#work',
-  },
+{
+title: 'console',
+url: '#console',
+},
+{
+title: 'work',
+url: '#work',
+},
 
-  {
-    title: 'about',
-    url: '#about',
-  },
-  {
-    title: 'dialup',
-    url: '#dialup'
-  }
+{
+title: 'about',
+url: '#about',
+},
+{
+title: 'contact',
+url: '#dialup'
+}
 ];
 
 
 export const animatedImagesArray = [];
 
 for (var i = 1; i <= 100; i++) {
-  if (i < 10) {
-      animatedImagesArray.push('./imagesshrunk/computer_000' + i + ".png");
-  } else if (i >= 10) {
-      animatedImagesArray.push('./imagesshrunk/computer_00' + i + ".png");
-  }
+if (i < 10) {
+animatedImagesArray.push('./imagesshrunk/computer_000' + i + ".png");
+} else if (i >= 10) {
+animatedImagesArray.push('./imagesshrunk/computer_00' + i + ".png");
+}
 
 }
 

@@ -1,7 +1,6 @@
-import React, { useRef, useState, useContext } from "react";
-import { projects } from "../data";
+import React, { useState } from "react";
 import Spline from '@splinetool/react-spline';
-import { motion, AnimatePresence  } from "framer-motion";
+import { AnimatePresence  } from "framer-motion";
 import {navLinks} from "../data";
 import {useEffect} from 'react';
 import {animatedImagesArray} from "../data";
@@ -13,12 +12,7 @@ import Clock from "./Clock";
 
 
 export default function Navi() {
-
-  let ratioContainer = "";
-
-
   useEffect(() => {
-
     var scrollRotation = debounce(function() {
     var scrollTop = window.scrollY;
     const step = 100;
@@ -27,14 +21,15 @@ export default function Navi() {
     let ratioContainer = Math.floor(scrollTop  / totalHeight * 85 );
       if (ratioContainer) {
         imageContainer.src = animatedImagesArray[ratioContainer];
-          console.log(ratioContainer);
+          // console.log(ratioContainer);
           return ratioContainer;
         if (ratioContainer <= 2 ) {
           imageContainer.src = animatedImagesArray[1];
-          console.log('no top left');
+          // console.log('no top left');
         }
       }
   }, 100);
+
   function debounce(func, wait, immediate) {
   	var timeout;
   	return function() {
@@ -49,6 +44,7 @@ export default function Navi() {
   		if (callNow) func.apply(context, args);
   	};
   };
+
   function topTop() {
       window.scrollTo(0,0);
   }
@@ -56,139 +52,119 @@ export default function Navi() {
   window.addEventListener('onClick', topTop);
   })
 
-
-
   const [showHome, setHomeShow] = useState(false);
   const [showAbout, setAboutShow] = useState(false);
   const [showWork, setWorkShow] = useState(false);
   const [showDialup, setDialupShow] = useState(false);
 
-
+// Add zindex when clicked
   document.querySelectorAll('.stacked').forEach(el => {
     el.addEventListener('click', () => {
       el.style.zIndex++
-      console.log('test clickers');
+
     })
   })
 
 
-
+// Close windows by id
   const classToggle = (e) => {
     let a = e.currentTarget.parentElement.parentElement.id;
-
-if (a === 'console') {
-    console.log('console', a);
-      setHomeShow(prevValue => !prevValue);
-} else if (a === 'work') {
-    console.log('work', a);
-      setWorkShow(prevValue => !prevValue);
-} else if (a === 'about')  {
-    console.log('about', a);
-      setAboutShow(prevValue => !prevValue);
-} else if (a === 'dialup') {
-  setDialupShow(prevValue => !prevValue);
-}
-  };
-
+      if (a === 'console') {
+          // console.log('console', a);
+            setHomeShow(prevValue => !prevValue);
+      } else if (a === 'work') {
+          // console.log('work', a);
+            setWorkShow(prevValue => !prevValue);
+      } else if (a === 'about')  {
+          // console.log('about', a);
+            setAboutShow(prevValue => !prevValue);
+      } else if (a === 'dialup') {
+        setDialupShow(prevValue => !prevValue);
+      }
+        };
 return (
 
 <>
-  <div className=" fixed top-0 left-0 flex align-top  w-full h-full text-gray-400  body-font overflow-hidden">
-
-
-  <ul className="navLinks absolute top-20 w-1/12 text-right dock opacity-100   sm:absolute sm:bottom-8 sm:w-full sm:h-28 sm:left-0 sm:text-center">
-  <div className="sm:hidden aniScrollContainer">
-   <a onClick={() => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'});}}>
-<img id="aniImage" src="../imagesshrunk/computer_0001.png" />
-</a>
-  </div>
-
-  <Clock />
-  <hr/>
-
-
-{navLinks.map((navLink) => (
-
-  <li id={navLink.title} className="sm:inline-block align-top text-center mx-auto  "   key={navLink.title}>
-  <div className="navItem">
-
-  {    navLink.title === 'console' &&
-
-  <a className="relative">
-  <Spline onClick={() => {setHomeShow(!showHome)}} scene="https://prod.spline.design/MJxoGltSbX4HizjE/scene.splinecode" />
-  <div className=" absolute width-full height-full top-4    text-white m-auto text-xs  ">
-  {showHome ? '●' : null }
-  </div>
-  <span className="text-white m-auto text-xs text-center uppercase  ">
-  {navLink.title}
-  </span>
-    </a>
-
- ||
-      navLink.title === 'work' &&
-
-      <a className="relative">
-      <Spline onClick={() => setWorkShow(!showWork)} scene="https://prod.spline.design/MJxoGltSbX4HizjE/scene.splinecode" />
-      <div className=" absolute width-full height-full top-4    text-white m-auto text-xs  ">
-      {showWork ? '●' : null }
+  <div className=" fixed top-0 left-0 flex align-top  w-full h-full text-gray-400 overflow-hidden">
+      <ul className="navLinks dock absolute top-20 w-1/12 text-right sm:bottom-12 sm:w-full sm:left-0 sm:text-center">
+      <div className="aniScrollContainer sm:hidden">
+        <div className="cursor-pointer" onClick={() => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'});}}>
+        <img alt="Scroll to Top" id="aniImage" src="../imagesshrunk/computer_0001.png" />
+        </div>
       </div>
-      <span className="text-white m-auto text-xs text-center uppercase  ">
-      {navLink.title}
-      </span>
-
-        </a>
-
-  ||
-
-      navLink.title ==='about' &&
-      <a className="relative">
-      <Spline onClick={() => setAboutShow(!showAbout)} scene="https://prod.spline.design/MJxoGltSbX4HizjE/scene.splinecode" />
-      <div className="absolute width-full height-full top-4    text-white m-auto text-xs   ">
-      {showAbout ? '●' : null }
+      <div className="sm:hidden">
+        <Clock />
       </div>
-      <span className="text-white m-auto text-xs text-center uppercase  ">
-      {navLink.title}
-      </span>
-        </a>
+            {navLinks.map((navLink) => (
+            <li id={navLink.title} className="hover:translate-x-6 border-solid hover:border-transparent border-black border-b sm:hover:translate-x-0 sm:hover:-translate-y-6 transition-all transform-gpu cursor-pointer sm:inline-block sm:px-2 sm:py-2 align-top text-center mx-auto pb-4  "   key={navLink.title}>
+            <div className="navItem relative">
+            {    navLink.title === 'console' &&
+          <>
+            <Spline onClick={() => {setHomeShow(!showHome)}} scene="https://prod.spline.design/MJxoGltSbX4HizjE/scene.splinecode" />
+            <div className="absolute top-2 left-5 text-green-400 m-auto text-xs  ">
+            {showHome ? '●' : null }
+            </div>
+            <div className="cursor-pointer rounded-sm  pb-0 text-black m-auto text-xs red-hat tracking-widest text-center uppercase">
+            {navLink.title}
+            </div>
+          </>
+            ||
+            navLink.title === 'work' &&
+        <>
+            <Spline onClick={() => setWorkShow(!showWork)} scene="https://prod.spline.design/MJxoGltSbX4HizjE/scene.splinecode" />
+            <div className="absolute top-2 left-5 text-green-400 m-auto text-xs  ">
+            {showWork ? '●' : null }
+            </div>
+            <div className="cursor-pointer rounded-sm  pb-0 text-black m-auto text-xs red-hat tracking-widest text-center uppercase">
+            {navLink.title}
+            </div>
+        </>
+            ||
+            navLink.title ==='about' &&
+          <>
+            <Spline onClick={() => setAboutShow(!showAbout)} scene="https://prod.spline.design/MJxoGltSbX4HizjE/scene.splinecode" />
+            <div className="absolute top-2 left-5 text-green-400 m-auto text-xs   ">
+            {showAbout ? '●' : null }
+            </div>
+            <div className="cursor-pointer rounded-sm  pb-0 text-black m-auto text-xs red-hat tracking-widest text-center uppercase">
+            {navLink.title}
+            </div>
+        </>
+            ||
+            navLink.title ==='contact' &&
+          <div className="relative">
+            <Spline onClick={() => setDialupShow(!showDialup)} scene="https://prod.spline.design/4cYqVhXffG4uLh7O/scene.splinecode" />
+            <div className="absolute top-2 left-5 text-green-400 m-auto text-xs   ">
+            {showDialup ? '●' : null }
+            </div>
+            <div className="cursor-pointer rounded-sm  pb-0 text-black m-auto text-xs red-hat tracking-widest text-center uppercase">
+            {navLink.title}
+            </div>
+        </div>
+            }
+            </div>
+            </li>
+            ))}
+            </ul>
 
-  ||
 
-  navLink.title ==='dialup' &&
-  <a className="relative">
-  <Spline onClick={() => setDialupShow(!showDialup)} scene="https://prod.spline.design/4cYqVhXffG4uLh7O/scene.splinecode" />
-  <div className="absolute width-full height-full top-4    text-white m-auto text-xs   ">
-  {showDialup ? '●' : null }
-  </div>
-  <span className="text-white m-auto text-xs text-center uppercase  ">
-  {navLink.title}
-  </span>
-    </a>
+      <AnimatePresence initial={true}>
+      {showHome ?
+      <Home toggle={classToggle} setHomeShow={showHome}   />
+      : ''}
+      </ AnimatePresence>
 
-    }
-  </div>
-  </li>
+      <AnimatePresence initial={true}>
+      {showWork ? <Work toggle={classToggle} setWorkShow={showWork} /> : ''}
+      </ AnimatePresence>
 
-))}
-</ul>
-    <AnimatePresence initial={true}>
-    {showHome ?
-    <Home toggle={classToggle} setHomeShow={showHome}   />
-    : null}
-   </ AnimatePresence>
+      <AnimatePresence initial={true}>
+      {showAbout ? <About toggle={classToggle} setAboutShow={showAbout}  /> : ''}
+      </ AnimatePresence>
 
-   <AnimatePresence initial={true}>
-  {showWork ? <Work toggle={classToggle} setWorkShow={showWork} /> : ''}
-  </ AnimatePresence>
-
-  <AnimatePresence initial={true}>
-  {showAbout ? <About toggle={classToggle} setAboutShow={showAbout}  /> : ''}
-  </ AnimatePresence>
-
-  <AnimatePresence initial={true}>
-  {showDialup ? <Dialup toggle={classToggle} setDialupShow={showDialup}  /> : ''}
-  </ AnimatePresence>
-
-
+      <AnimatePresence initial={true}>
+      {showDialup ? <Dialup toggle={classToggle} setDialupShow={showDialup}  /> : ''}
+      </ AnimatePresence>
   </div>
 </>
 )

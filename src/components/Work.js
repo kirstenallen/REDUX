@@ -1,4 +1,4 @@
-import React, { lazy, Suspense }  from "react";
+import React from "react";
 import { projects } from "../data";
 import { placeHolder } from "../data";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -13,6 +13,14 @@ const Work = params =>  {
     const [lightboxDisplay, setLightBoxDisplay] = React.useState(false);
     const [imageToShow, setImageToShow] = useState("");
     const [altToShow, setAltToShow] = useState("");
+    const [blurbToShow, setBlurbToShow] = useState("");
+
+
+
+    const showBlurb = (year) => {
+      setBlurbToShow(year);
+      console.log('year', year);
+    }
     const showAlt = (alt) => {
       setAltToShow(alt);
       console.log('alt', alt);
@@ -22,6 +30,7 @@ const Work = params =>  {
       setLightBoxDisplay(true);
     };
     const hideLightBox = () => {
+
       let lightbox = document.getElementById('lightbox');
         lightbox.classList.toggle('fadeOut');
         var delayInMilliseconds = 500; //1 second
@@ -31,80 +40,64 @@ const Work = params =>  {
     };
 
 
+
   return (
 
 <>
-
-
-    <motion.div drag
-      dragMomentum={true}
-tabIndex={1}
+        <motion.div drag
+        dragMomentum={true}
+        tabIndex={1}
         initial={{ opacity: 0, scale: 0, left:'-200%', top:'unset'}}
-          animate={{ opacity: 1, scale: 1, top:0, left:'100px'}}
-          transition={{ duration: 0.5 }}
-           exit={{ opacity: 0, scale:0, left:'-50%', top:'unset'}}
-
-     className=" stacked absolute top-1/2 left-1/2 w-8/12 h-5/6 text-left sm:w-full sm:!-left-[0px]" id="work">
-              <div className="imagesPre flex flex-row flex-nowrap align-top ">
-                <div className=" text-left w-8/12 ">work.exe
+        animate={{ opacity: 1, scale: 1, top:0, left:'100px', zIndex: '777'}}
+        transition={{ duration: 0.5 }}
+        exit={{ opacity: 0, scale:0, left:'-200%', top:'unset'}}
+        className="stacked absolute flex flex-col h-5/6 w-11/12 sm:w-full md:w-10/12 lg:w-11/12 xl:w-11/12 2xl:w-11/12   text-left  sm:!-left-[0px] rounded-lg" id="work">
+              <div className="imagesPre flex flex-row flex-nowrap align-top bg-gray-100">
+                <div className="text-left w-10/12 ">work.exe</div>
+                <div className="w-2/12 inline-block text-right text-red-400 font-bold cursor-pointer" onClick={params.toggle} >x</div>
               </div>
-                  <div className="w-1/12 inline-block text-right text-red-400 font-bold cursor-pointer" style={{zIndex:999}} onClick={params.toggle} >x</div>
-
-        </div>
-        <div className="images  h-full  bg-emerald-100   sm:w-full  px-10 m-auto relative overflow-auto">
-
-                <div className="text-right bg-transparent w-2/12  "><a href="#animation">animation</a></div>
-
-
+                <div className="images bg-emerald-100 sm:w-full w-full  m-auto relative  overflow-auto rounded-b-lg" style={{'height':'-webkit-fill-available'}}>
+                <div className="relative h-full flex flex-col overflow-auto p-5" >
           {projects.map((project) => (
-            <div key={project.title} className="projectContainer opacity-80 mt-16 relative">
-            <div id={project.title} className="imagerow relative flex flex-row flex-wrap align-middle justify-start w-full white-bg  ">
-              <div className="folder_tab green-border white-bg text-sm font-bold text-gray-800 py-5"> > {project.category}</div>
+            <div key={project.title} className="projectContainer mt-16 relative">
+            <div id={project.title} className="imagerow relative flex flex-row flex-wrap w-full white-bg  ">
+              <div className="absolute -top-8 left-0 rounded-lg bg-gray-200 text-sm mx-auto font-bold text-gray-800 pt-2 px-10 pb-4"> > {project.category}
+              </div>
+              <div key={project.title} className="relative top-0 right-0 left-0 w-full  bg-gray-200 flex flex-nowrap flex-row items-end align-middle p-5 sm:text-xs md:text-sm">
+                    <p className="text-gray-900 text-center red-hat tracking-widest w-full flex flex-nowrap flex-row align-middle  text-xs">
+                      <span className="w-auto ">{project.category}/</span><span className="w-auto  font-bold">{project.title}/</span><span className="w-auto text-left font-light">{project.description}</span>
+                    </p>
+                  </div>
             {project.content.map((c, i) => (
-              <div key={i} className=" flex flex-col w-3/12 sm:w-1/12">
-              <a className="mx-auto justify-center align-center" onClick={() => {showImage(c.imageurl); showAlt(c.caption)}}>
-              <img className="w-6/12 align-center justify-center block m-auto text-center" src="../imagesshrunk/file402.png" />
-              </a>
-                <p className="break-all  text-center mx-auto">{c.imageurl.split('imagesshrunk/').pop()}</p>
+              <div key={i} className=" flex flex-col w-2/12 sm:w-full md:w-1/2 lg:w-3/12 xl:w-3/12 2xl:w-2/12 my-5 md:my-5 md:mx-0 sm:w-full ">
+              <div className="cursor-zoom-in mx-auto justify-center align-center" onClick={() => {showImage(c.imageurl); showAlt(c.caption); showBlurb(c.year)}}>
+              <LazyLoadImage effect="blur" placeholderSrc={placeHolder} className="thumbnail h-[150px] sm:h-[100px] md:h-[100px] lg:h-[100px] overflow-hidden object-cover align-center justify-center block m-auto text-center" src={c.imageurl} />
+              </div>
+                <p className="break-word w-6/12 text-center red-hat text-sm my-5 mx-auto">{c.imageurl.slice(18).slice(0, -4)} </p>
+                  <p className="break-word w-6/12 text-center red-hat text-xs text-black mx-auto">{c.imageurl.slice(-3)}</p>
                 </div>
             ))}
             </div>
-            <div key={project.title} className="project-title relative flex flex-nowrap flex-row items-end align-middle h-10 px-5 border-solid border-white border-2 bg-gray-100 w-12/12 sm:text-xs md:text-sm">
-                  <p className="text-gray-900 text-center red-hat tracking-widest w-full flex flex-nowrap flex-row align-middle  text-xs">
-                    <span className="w-auto ">{project.category}/</span><span className="w-auto  font-bold">{project.title}/</span><span className="w-auto text-left font-light">{project.description}</span>
-                  </p>
-                </div>
               </div>
           ))}
-
+          </div>
         </div>
     </motion.div>
-
     {lightboxDisplay ?
-
-
-
-    <div key={imageToShow} id="lightbox" className="w-full h-full" style={{pointerEvents:'none'}}>
-
-          <motion.div drag
-          dragMomentum={true} className="h-full">
-
-    <div className="relative block w-6/12 my-10 mx-auto sm:w-full sm:h-auto my-0 " style={{background:'#f7f7f7', pointerEvents:'all'}}>
-    <div className="imagesPre flex flex-row absolute block mx-auto !-top-2">
-      <div className=" text-left w-8/12  ">{altToShow} </div>
-        <div className="w-4/12 inline-block text-right text-red-800" style={{zIndex:999}} onClick={hideLightBox} >x</div>
-    </div>
-    <LazyLoadImage id="lightbox-img" className="block" placeholderSrc={placeHolder} loading="lazy" src={imageToShow} style={{pointerEvents:'none'}} />
-
-    </div>
-    </motion.div>
-    </div>
-
-
+      <div key={imageToShow} id="lightbox" className="w-full h-full"  onClick={hideLightBox} >
+      <motion.div drag
+      exit={{ opacity: 0, scale:0, left:'-200%', top:'unset'}}
+      dragMomentum={true}  id="lightboxWindow" className="bg-white rounded-md stacked absolute flex flex-col h-5/6 w-10/12 sm:w-full md:w-10/12 lg:w-10/12 xl:w-10/12 2xl:w-full   text-left  sm:!-left-[0px]" onClick={(e) => e.stopPropagation()}>
+      <div className="imagesPre flex flex-row flex-nowrap align-top ">
+      <div className="text-left w-11/12">{altToShow}</div>
+      <div className="w-1/12  text-right text-red-400"  onClick={hideLightBox} >x</div>
+      </div>
+      <img alt={altToShow} id="lightbox-img" src={imageToShow} style={{pointerEvents:'none'}} />
+      <div className="text-center red-hat font-light text-black pt-5 pb-5">{blurbToShow}</div>
+      </motion.div>
+      </div>
   : ''}
-
   </>
-
   );
 }
 
