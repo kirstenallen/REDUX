@@ -247,20 +247,20 @@ caption:"Charlotte's Web",
 year: '2019 - Illustrator - Client',
 },
 {
-imageurl: "./imagesshrunk/SC/romeo.jpg",
+imageurl: "./imagesshrunk/SC/romeo_and_juliet.jpg",
 caption:"Romeo and Juliet",
 year: '2015 - Photoshop - Client',
 },
 {
-imageurl: "./imagesshrunk/SC/wizard.jpg",
+imageurl: "./imagesshrunk/SC/wizard_of_oz.jpg",
 caption:"Wizard of Oz",
 year: '2015 - Photoshop - Client',
 },
 {
-imageurl: "./imagesshrunk/SC/scarlett.jpg",
+imageurl: "./imagesshrunk/SC/scarlett_letter.jpg",
 caption:"Scarlett Letter",
 year: '2015 - Photoshop - Client',
-},
+}
 ],
 },
 {
@@ -280,8 +280,8 @@ caption:"Dirty Thirties",
 year: '2016 - Woodstain on Wood - Personal - Sold',
 },
 {
-imageurl: "./imagesshrunk/PT/threshold.jpg",
-caption:"Threshold",
+imageurl: "./imagesshrunk/PT/the_threshold.jpg",
+caption:"threshold",
 year: '2016 - Oil - Personal',
 },
 {
