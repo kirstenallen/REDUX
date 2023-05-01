@@ -1,23 +1,18 @@
-import React, { useState, useEffect } from 'react';
-    import { motion, AnimatePresence  } from "framer-motion";
+import React, { useState } from 'react';
+    import { motion, AnimatePresence } from "framer-motion";
+
 
 
 
 
 const Home = params => {
 
+  const isMobile = window.innerWidth < 768;
+
   const [secretCode,setSecret] = useState("");
   const [skiFree, setSkiDisplay] = useState(false);
 
 
-    const classToggle = (e) => {
-      let a = e.currentTarget.parentElement.parentElement.id;
-
-  if (a === 'skiifree') {
-      console.log('console', a);
-        setSkiDisplay(prevValue => !prevValue);
-}
-    };
 
 const checkSecret = (event) => {
   var inputCheck = document.getElementById('secretInput');
@@ -37,10 +32,10 @@ const checkSecret = (event) => {
 
   return (
   <>
-  <motion.div drag
+  <motion.div drag={!isMobile}
   dragMomentum={true}
   tabIndex={0}
-  initial={{ opacity: 0, scale: 0, left:'-200%', top:'unset'}}
+  initial={{ opacity: 0, scale: 0, left:'-200%', top:'unset', zIndex:'888'}}
   animate={{ opacity: 1, scale: 1, top:0, left:'100px'}}
   transition={{ duration: 0.5 }}
   exit={{ opacity: 0, scale:0, left:'-50%', top:'unset'}}
@@ -70,7 +65,8 @@ const checkSecret = (event) => {
 
     {skiFree ?
         <AnimatePresence initial={true}>
-      <motion.div drag
+      <motion.div
+      drag={!isMobile}
         dragMomentum={true}
         tabIndex={1}
         initial={{ opacity: 0, scale: 0, left:'-200%', top:'unset'}}

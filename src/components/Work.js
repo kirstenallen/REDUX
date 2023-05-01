@@ -15,6 +15,7 @@ const Work = params =>  {
     const [altToShow, setAltToShow] = useState("");
     const [blurbToShow, setBlurbToShow] = useState("");
 
+    const isMobile = window.innerWidth < 768;
 
 
     const showBlurb = (year) => {
@@ -44,14 +45,14 @@ const Work = params =>  {
   return (
 
 <>
-        <motion.div drag
+        <motion.div    drag={!isMobile}
         dragMomentum={true}
         tabIndex={1}
-        initial={{ opacity: 0, scale: 0, left:'-200%', top:'unset'}}
-        animate={{ opacity: 1, scale: 1, top:0, left:'100px', zIndex: '777'}}
+        initial={{ opacity: 0, scale: 0, left:'-200%', top:'unset',  zIndex:'888'}}
+        animate={{ opacity: 1, scale: 1, top:0, left:'100px'}}
         transition={{ duration: 0.5 }}
         exit={{ opacity: 0, scale:0, left:'-200%', top:'unset'}}
-        className="stacked absolute flex flex-col h-5/6 w-11/12 sm:w-full md:w-10/12 lg:w-11/12 xl:w-11/12 2xl:w-11/12   text-left  sm:!-left-[0px] rounded-lg" id="work">
+        className="stacked absolute flex flex-col h-[90vh] sm:h-[80%] w-11/12 sm:w-full md:w-10/12 lg:w-11/12 xl:w-11/12 2xl:w-11/12   text-left  sm:!-left-[0px] rounded-lg" id="work">
               <div className="imagesPre flex flex-row flex-nowrap align-top bg-gray-100">
                 <div className="text-left w-10/12 ">work.exe</div>
                 <div className="w-2/12 inline-block text-right text-red-400 font-bold cursor-pointer" onClick={params.toggle} >x</div>
@@ -73,8 +74,8 @@ const Work = params =>  {
               <div className="cursor-zoom-in mx-auto justify-center align-center" onClick={() => {showImage(c.imageurl); showAlt(c.caption); showBlurb(c.year)}}>
               <LazyLoadImage effect="blur" placeholderSrc={placeHolder} className="thumbnail h-[150px] sm:h-[100px] md:h-[100px] lg:h-[100px] overflow-hidden object-cover align-center justify-center block m-auto text-center" src={c.imageurl} />
               </div>
-                <p className="break-word w-6/12 text-center red-hat text-sm my-5 mx-auto">{c.imageurl.slice(18).slice(0, -4)} </p>
-                  <p className="break-word w-6/12 text-center red-hat text-xs text-black mx-auto">{c.imageurl.slice(-3)}</p>
+                <p className="break-word w-6/12 text-center red-hat text-sm my-5 mx-auto inline-block">{c.imageurl.slice(18).slice(0, -4)} </p>
+                  <p className="break-word w-6/12 text-center red-hat text-xs text-black mx-auto inline-block">{c.imageurl.slice(-3)}</p>
                 </div>
             ))}
             </div>
@@ -85,7 +86,8 @@ const Work = params =>  {
     </motion.div>
     {lightboxDisplay ?
       <div key={imageToShow} id="lightbox" className="w-full h-full"  onClick={hideLightBox} >
-      <motion.div drag
+      <motion.div
+       drag={!isMobile}
       exit={{ opacity: 0, scale:0, left:'-200%', top:'unset'}}
       dragMomentum={true}  id="lightboxWindow" className="bg-white rounded-md stacked absolute flex flex-col h-5/6 w-10/12 sm:w-full md:w-10/12 lg:w-10/12 xl:w-10/12 2xl:w-full   text-left  sm:!-left-[0px]" onClick={(e) => e.stopPropagation()}>
       <div className="imagesPre flex flex-row flex-nowrap align-top ">

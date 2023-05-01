@@ -9,6 +9,7 @@ const Dialup = params =>  {
 const [dialupVisible , setDialupVisible] = useState(true);
 const [formVisible, setFormVisible] = useState(false);
 
+const isMobile = window.innerWidth < 768;
 
 
 
@@ -24,6 +25,7 @@ const [formVisible, setFormVisible] = useState(false);
       connectingId.classList.add('text-green-500');
       connectingId.innerHTML = "you've got mail!";
       connectingId.classList.remove('text-orange-500');
+
         console.log('timeout 1');
     }, 6000);
 
@@ -31,6 +33,8 @@ const [formVisible, setFormVisible] = useState(false);
     debounce = setTimeout(() => {
         setDialupVisible(false);
         setFormVisible(true);
+        var dialUpContainer = document.getElementById('dialup');
+        dialUpContainer.style.height = "75%";
         console.log('timeout 2');
     },8000);
     return() => clearTimeout(debounce);
@@ -85,15 +89,15 @@ const stopGlimmer = (e) => {
   return (
 
     <>
-        <motion.div drag
+        <motion.div drag={!isMobile}
         dragMomentum={true}
         tabIndex={3}
-        initial={{ opacity: 0, scale: 0, left:'-200%', top:'unset'}}
+        initial={{ opacity: 0, scale: 0, left:'-200%', top:'unset',  zIndex:'888'}}
         animate={{ opacity: 1, scale: 1, top:0, left:'100px'}}
         transition={{ duration: 0.5 }}
          exit={{ opacity: 0, scale:0, left:'-50%', top:'unset'}}
         key="dialup"
-        className="stacked absolute flex flex-col w-6/12 h-5/6 lg:w-10/12 xl:w-10/12 md:w-10/12 sm:w-full h-5/6  text-left  sm:!-left-[0px] rounded-md bg-gray-100" id="dialup" >
+        className="stacked absolute flex flex-col w-6/12 h-[60%] sm:h-[60%] lg:w-10/12 xl:w-10/12 md:w-10/12 sm:w-full h-5/6  text-left  sm:!-left-[0px] rounded-md bg-gray-100" id="dialup" >
 
               <div className="imagesPre flex flex-row flex-nowrap align-top">
                 <div className="text-left w-10/12 ">internet.exe</div>
@@ -139,18 +143,19 @@ const stopGlimmer = (e) => {
           {formVisible ?
             <>
             <div className="relative h-full flex flex-col overflow-auto p-5">
-            <div className="bg-white mt-12 w-full py-10 flex flex-col align-items-center rounded-lg drop-shadow-lg">
+            <div className="bg-white mt-12 w-full flex flex-col align-items-center rounded-lg drop-shadow-lg">
             <div className="absolute -top-7 -left-2 text-green-400 m-auto text-lg" style={{zIndex:'555'}}>
             ●
             </div>
-            <div className="absolute -top-4 left-0 right-0  bg-indigo-500  py-2 px-2 rounded-t-md text-white red-hat tracking-tighter text-sm">email messenger v 1.0.2</div>
+            <div className="relative left-0 right-0  bg-indigo-500  py-2 px-2 rounded-t-md text-white red-hat tracking-tighter text-sm">email messenger v 1.0.2</div>
             <div className="w-11/12 mx-auto my-0 red-hat">
-            <p className="inline-block mb-0 pb-0"><p className=" inline-block text-indigo-500 ">kirsten:</p> Hi there! Thanks for visiting my portfolio - if you'd like to contact me feel free to leave me a message below! </p>
+            <p className="inline-block mb-0 p-5"><p className=" inline-block text-indigo-500 ">kirsten:</p> Hi there! Thanks for visiting my portfolio - if you'd like to contact me feel free to leave me a message below! </p>
             </div>
             </div>
-            <div className="flex flex-col justify-center" style={{'height':'inherit'}}>
-              <div className="bg-white w-full py-10 flex flex-col align-items-center rounded-lg drop-shadow-lg">
-              <div className="absolute -top-4 left-0 right-0  bg-indigo-500  py-2 px-2 rounded-t-md text-white red-hat tracking-tighter text-sm">email messenger v 1.0.2</div>
+            <br/><br/>
+            <div className="flex flex-col justify-center" >
+              <div className="bg-white w-full flex flex-col rounded-lg drop-shadow-lg">
+              <div className="relative left-0 right-0  bg-indigo-500  py-2 px-2 rounded-t-md text-white red-hat tracking-tighter text-sm">email messenger v 1.0.2</div>
               <form className="w-11/12 mx-auto my-0"
               action="https://formspree.io/xbjjpddq"
               method="POST">

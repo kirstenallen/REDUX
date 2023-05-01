@@ -12,6 +12,8 @@ import Clock from "./Clock";
 
 
 export default function Navi() {
+
+
   useEffect(() => {
     var scrollRotation = debounce(function() {
     var scrollTop = window.scrollY;
@@ -19,14 +21,12 @@ export default function Navi() {
     var totalHeight = document.getElementById('main').offsetHeight - step * .9;
     var imageContainer = document.getElementById('aniImage');
     let ratioContainer = Math.floor(scrollTop  / totalHeight * 85 );
+
       if (ratioContainer) {
         imageContainer.src = animatedImagesArray[ratioContainer];
           // console.log(ratioContainer);
           return ratioContainer;
-        if (ratioContainer <= 2 ) {
-          imageContainer.src = animatedImagesArray[1];
-          // console.log('no top left');
-        }
+    
       }
   }, 100);
 
@@ -86,7 +86,7 @@ return (
 
 <>
   <div className=" fixed top-0 left-0 flex align-top  w-full h-full text-gray-400 overflow-hidden">
-      <ul className="navLinks dock absolute top-20 w-1/12 text-right sm:bottom-12 sm:w-full sm:left-0 sm:text-center">
+      <ul className="navLinks dock absolute top-20 w-1/12 text-right sm:bottom-10 sm:w-full sm:left-0 sm:text-center">
       <div className="aniScrollContainer sm:hidden">
         <div className="cursor-pointer" onClick={() => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'});}}>
         <img alt="Scroll to Top" id="aniImage" src="../imagesshrunk/computer_0001.png" />
@@ -96,7 +96,7 @@ return (
         <Clock />
       </div>
             {navLinks.map((navLink) => (
-            <li id={navLink.title} className="hover:translate-x-6 border-solid hover:border-transparent border-black border-b sm:hover:translate-x-0 sm:hover:-translate-y-6 transition-all transform-gpu cursor-pointer sm:inline-block sm:px-2 sm:py-2 align-top text-center mx-auto pb-4  "   key={navLink.title}>
+            <li id={navLink.title} className="hover:translate-x-6 border-solid hover:border-transparent border-black border-b sm:hover:translate-x-0 sm:hover:-translate-y-0 transition-all transform-gpu cursor-pointer sm:inline-block sm:px-2 sm:py-2 align-top text-center mx-auto pb-4  "   key={navLink.title}>
             <div className="navItem relative">
             {    navLink.title === 'console' &&
           <>
