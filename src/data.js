@@ -270,8 +270,13 @@ icon: "",
 description: "Paint & Sketchbook",
 content: [
 {
-imageurl: "./imagesshrunk/PT/full0bullstreet_mini.jpg",
+imageurl: "./imagesshrunk/PT/zero_bullstreet.jpg",
 caption:"0 West Bull Street",
+year: '2016 - Woodstain on Wood - Personal - Sold',
+},
+{
+imageurl: "./imagesshrunk/PT/dirty_thirties.png",
+caption:"Dirty Thirties",
 year: '2016 - Woodstain on Wood - Personal - Sold',
 },
 {
@@ -280,7 +285,7 @@ caption:"Threshold",
 year: '2016 - Oil - Personal',
 },
 {
-imageurl: "./imagesshrunk/PT/vineyardchurc_smallh1.jpg",
+imageurl: "./imagesshrunk/PT/vineyard_church.jpg",
 caption:"Back of the Vineyard Church",
 year: '2016 - Oil - Personal - Sold',
 },
@@ -290,7 +295,7 @@ caption:"T-Square",
 year: '2016 - Oil - Personal',
 },
 {
-imageurl: "./imagesshrunk/PT/anonymousbuilding4.jpg",
+imageurl: "./imagesshrunk/PT/anonymous_building.jpg",
 caption:"T-Square",
 year: '2016 - Oil - Personal',
 }
