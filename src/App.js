@@ -1,26 +1,22 @@
 // import React from "react";
-import React from "react";
-import { Suspense, lazy } from 'react';
+import React, { lazy }from "react";
+import { Suspense } from 'react';
 import Bootmenu from './components/Bootmenu';
 import './App.css';
 import { motion } from "framer-motion"
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import Spline from '@splinetool/react-spline';
+
 
 
 const Navi = React.lazy(() => {
-  return new Promise(resolve => setTimeout(resolve, 4000)).then(() =>
+  return new Promise(resolve => setTimeout(resolve, 2000)).then(() =>
     import('./components/Navi')
   );
 });
-const Footer = React.lazy(() => {
-  return new Promise(resolve => setTimeout(resolve, 4000)).then(() =>
-    import('./components/Footer')
-  );
-});
+
 
 // const Navi = lazy(() => import('./components/Navi'))
-// const Footer = lazy(() => import('./components/Footer'))
+const Footer = lazy(() => import('./components/Footer'))
 
 
 
@@ -38,7 +34,7 @@ export default function App() {
 
         <div style={{height:'100vh'}} className="w-full relative top-0 left-0 right-0 bottom-0">
         <div className="flex flex-col red-hat sm:flex-start md:justify-start md:pt-9 justify-center h-full w-full align-center justify-content text-left px-24">
-        <h1 className="p-0 m-0 md:text-black text-black text-center sm:text-left md:text-left leading-8">kirsten allen &nbsp;</h1>
+        <h1 className="p-0 m-0 md:text-black text-black text-center sm:text-left md:text-left leading-8">kirsten allen</h1>
         <p className="p-0 m-0 md:text-black text-black text-center sm:text-left md:text-left">portfoliOS - v 1.0.1</p>
         </div>
         </div>

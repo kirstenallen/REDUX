@@ -72,7 +72,7 @@ const Work = params =>  {
             {project.content.map((c, i) => (
               <div key={i} className=" flex flex-col w-2/12 sm:w-full md:w-1/2 lg:w-3/12 xl:w-3/12 2xl:w-2/12 my-5 md:my-5 md:mx-0 sm:w-full ">
               <div className="cursor-zoom-in mx-auto justify-center align-center" onClick={() => {showImage(c.imageurl); showAlt(c.caption); showBlurb(c.year)}}>
-              <LazyLoadImage effect="blur" placeholderSrc={placeHolder} className="thumbnail h-[150px] sm:h-[100px] md:h-[100px] lg:h-[100px] overflow-hidden object-cover align-center justify-center block m-auto text-center" src={c.imageurl} />
+              <LazyLoadImage placeholderSrc={placeHolder} className="thumbnail h-[150px] sm:h-[100px] md:h-[100px] lg:h-[100px] overflow-hidden object-cover align-center justify-center block m-auto text-center" src={c.imageurl} />
               </div>
                 <p className="break-word w-6/12 text-center red-hat text-sm my-5 mx-auto inline-block">{c.imageurl.slice(18).slice(0, -4)} </p>
                   <p className="break-word w-6/12 text-center red-hat text-xs text-black mx-auto inline-block">{c.imageurl.slice(-3)}</p>

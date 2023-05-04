@@ -315,22 +315,16 @@ margin-top:35px !important;
 .gradient {
 background-image: linear-gradient(
   to bottom,
-  #ffffff 0%,
+  #ffdede 0%,
   #6fb1d2 10%,
-  #cc945e 15%,
-  #c68151 20%,
-  #bf6c46 25%,
-  #b7573e 30%,
-  #ba4d48 35%,
-  #ba4453 40%,
-  #b73c60 45%,
-  #b7477f 50%,
-  #b0569d 55%,
-  #a067b8 60%,
-  #8778ce 65%,
-  #7a6acf 70%,
-  #5f3e92 75%,
-  #1a5f82 80%,
+  #6ab6ec 20%,
+  #5f78c8 30%,
+  #8246bf 40%,
+  #7e3eb7 50%,
+  #964285 60%,
+  #ba44a4 70%,
+  #5f3e92 80%,
+  #1a5f82 90%,
   #6fb1d2 100%
   );
 

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import Spline from '@splinetool/react-spline';
+import React, { useState, lazy } from "react";
+import { Suspense } from 'react';
+// import Spline from '@splinetool/react-spline';
 import { AnimatePresence  } from "framer-motion";
 import {navLinks} from "../data";
 import {useEffect} from 'react';
@@ -9,6 +10,17 @@ import Work from './Work';
 import About from './About';
 import Dialup from './Dialup';
 import Clock from "./Clock";
+import { placeHolder } from "../data";
+
+//
+// const SplineRuntime = lazy(() => import('@splinetool/react-spline'))
+
+
+const SplineRuntime = React.lazy(() => {
+  return new Promise(resolve => setTimeout(resolve, 500)).then(() =>
+    import('@splinetool/react-spline')
+  );
+});
 
 
 export default function Navi() {
@@ -26,7 +38,7 @@ export default function Navi() {
         imageContainer.src = animatedImagesArray[ratioContainer];
           // console.log(ratioContainer);
           return ratioContainer;
-    
+
       }
   }, 100);
 
@@ -95,12 +107,15 @@ return (
       <div className="sm:hidden">
         <Clock />
       </div>
+
+<Suspense fallback={<div className="red-hat"><img className="!w-[25px] !h-[25px] mx-auto block" src={placeHolder} /></div>}>
+
             {navLinks.map((navLink) => (
             <li id={navLink.title} className="hover:translate-x-6 border-solid hover:border-transparent border-black border-b sm:hover:translate-x-0 sm:hover:-translate-y-0 transition-all transform-gpu cursor-pointer sm:inline-block sm:px-2 sm:py-2 align-top text-center mx-auto pb-4  "   key={navLink.title}>
             <div className="navItem relative">
             {    navLink.title === 'console' &&
           <>
-            <Spline onClick={() => {setHomeShow(!showHome)}} scene="https://prod.spline.design/MJxoGltSbX4HizjE/scene.splinecode" />
+            <SplineRuntime onClick={() => {setHomeShow(!showHome)}} scene="https://prod.spline.design/MJxoGltSbX4HizjE/scene.splinecode" />
             <div className="absolute top-2 left-5 text-green-400 m-auto text-xs  ">
             {showHome ? '●' : null }
             </div>
@@ -111,7 +126,7 @@ return (
             ||
             navLink.title === 'work' &&
         <>
-            <Spline onClick={() => setWorkShow(!showWork)} scene="https://prod.spline.design/MJxoGltSbX4HizjE/scene.splinecode" />
+            <SplineRuntime onClick={() => setWorkShow(!showWork)} scene="https://prod.spline.design/MJxoGltSbX4HizjE/scene.splinecode" />
             <div className="absolute top-2 left-5 text-green-400 m-auto text-xs  ">
             {showWork ? '●' : null }
             </div>
@@ -122,7 +137,7 @@ return (
             ||
             navLink.title ==='about' &&
           <>
-            <Spline onClick={() => setAboutShow(!showAbout)} scene="https://prod.spline.design/MJxoGltSbX4HizjE/scene.splinecode" />
+            <SplineRuntime onClick={() => setAboutShow(!showAbout)} scene="https://prod.spline.design/MJxoGltSbX4HizjE/scene.splinecode" />
             <div className="absolute top-2 left-5 text-green-400 m-auto text-xs   ">
             {showAbout ? '●' : null }
             </div>
@@ -133,7 +148,7 @@ return (
             ||
             navLink.title ==='contact' &&
           <div className="relative">
-            <Spline onClick={() => setDialupShow(!showDialup)} scene="https://prod.spline.design/4cYqVhXffG4uLh7O/scene.splinecode" />
+            <SplineRuntime onClick={() => setDialupShow(!showDialup)} scene="https://prod.spline.design/4cYqVhXffG4uLh7O/scene.splinecode" />
             <div className="absolute top-2 left-5 text-green-400 m-auto text-xs   ">
             {showDialup ? '●' : null }
             </div>
@@ -145,6 +160,8 @@ return (
             </div>
             </li>
             ))}
+
+</Suspense>
             </ul>
 
 

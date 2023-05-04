@@ -298,7 +298,17 @@ year: '2016 - Oil - Personal',
 imageurl: "./imagesshrunk/PT/anonymous_building.jpg",
 caption:"T-Square",
 year: '2016 - Oil - Personal',
-}
+},
+{
+imageurl: "./imagesshrunk/PT/judygarland.jpg",
+caption:"Judy Garland",
+year: '2018 - Digital - Personal',
+},
+{
+imageurl: "./imagesshrunk/PT/ellie.jpg",
+caption:"Bella Ramsey",
+year: '2023 - Digital - Personal',
+},
 ],
 },
 
