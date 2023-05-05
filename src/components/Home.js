@@ -5,13 +5,12 @@ import React, { useState } from 'react';
 
 
 
-const Home = params => {
+const Home = (params, props) => {
 
   const isMobile = window.innerWidth < 768;
 
   const [secretCode,setSecret] = useState("");
   const [skiFree, setSkiDisplay] = useState(false);
-
 
 
 const checkSecret = (event) => {
@@ -35,12 +34,12 @@ const checkSecret = (event) => {
   <motion.div drag={!isMobile}
   dragMomentum={true}
   tabIndex={0}
-  initial={{ opacity: 0, scale: 0, left:'-200%', top:'unset', zIndex:'888'}}
+  initial={{ opacity: 0, scale: 0, left:'-200%', top:'unset'}}
   animate={{ opacity: 1, scale: 1, top:0, left:'100px'}}
   transition={{ duration: 0.5 }}
   exit={{ opacity: 0, scale:0, left:'-50%', top:'unset'}}
   key="console"
-  className="stacked absolute w-4/12 text-left sm:w-full sm:!-left-[0px] " id="console" >
+  className="stacked absolute w-4/12 text-left sm:w-full sm:!-left-[0px] rounded-lg" id="console">
             <div className="imagesPre flex flex-row flex-nowrap align-top bg-gray-100 ">
               <div className=" text-left w-8/12 ">console.exe</div>
               <div className="w-4/12 inline-block text-right text-red-400"  onClick={params.toggle} >x</div>

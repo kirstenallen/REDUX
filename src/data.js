@@ -309,24 +309,15 @@ imageurl: "./imagesshrunk/PT/ellie.jpg",
 caption:"Bella Ramsey",
 year: '2023 - Digital - Personal',
 },
-],
-},
-
-{
-title: "Illustrations",
-category: "ART",
-icon: "",
-description: "Other random illustrations",
-content: [
 {
 imageurl: "./imagesshrunk/IL/snake.jpg",
-caption:"0 West Bull Street",
+caption:"Oroboros",
 year: '2018 - Ink - Personal - Sold',
 },
 {
 imageurl: "./imagesshrunk/IL/camping.gif",
-caption:"Threshold",
-year: '2016 - Photoshop - Personal',
+caption:"Shadow Puppets Animation",
+year: '2016 - Photoshop - Client',
 },
 {
 imageurl: "./imagesshrunk/IL/pitcher.gif",
@@ -345,6 +336,7 @@ year: '2016 - Photoshop - Personal',
 }
 ],
 },
+
 {
 title: "Other",
 category: "ODD",

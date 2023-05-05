@@ -87,18 +87,26 @@ font-family: 'Press Start 2P', cursive;
 display:block!important;
 position:initial;
 } */
-#bootmenu p:nth-child(1) {animation-delay:1s !important;}
-#bootmenu p:nth-child(2) {animation-delay:1.25s !important;}
-#bootmenu p:nth-child(3) {animation-delay:1.5s !important;}
-#bootmenu p:nth-child(4) {animation-delay:2s !important;}
-#bootmenu p:nth-child(5) {animation-delay:2.25s !important;}
-#bootmenu p:nth-child(6) {animation-delay:2.5s !important;}
-#bootmenu p:nth-child(7) {animation-delay:3s !important;}
-#bootmenu p:nth-child(8) {animation-delay:3.25s !important;}
-#bootmenu p:nth-child(9) {animation-delay:3.5s !important;}
-#bootmenu p:nth-child(10) {animation-delay:4s !important;}
-#bootmenu p:nth-child(11) {animation-delay:4.25s !important;}
-#bootmenu p:nth-child(12) {animation-delay:4.5s !important;}
+#bootmenu p:nth-child(1) {animation-delay:0s !important;}
+#bootmenu p:nth-child(2) {animation-delay:.25s !important;}
+#bootmenu p:nth-child(3) {animation-delay:.5s !important;}
+#bootmenu p:nth-child(4) {animation-delay:.75s !important;}
+#bootmenu p:nth-child(5) {animation-delay:1s !important;}
+#bootmenu p:nth-child(6) {animation-delay:1.25s !important;}
+#bootmenu p:nth-child(7) {animation-delay:1.5s !important;}
+#bootmenu p:nth-child(8) {animation-delay:1.75s !important;}
+#bootmenu p:nth-child(9) {animation-delay:1.8s !important;}
+#bootmenu p:nth-child(10) {animation-delay:1.9s !important;}
+#bootmenu p:nth-child(11) {animation-delay:2s !important;}
+#bootmenu p:nth-child(12) {animation-delay:2.2s !important;}
+
+
+.welcome li:nth-child(1) {animation-delay:0s !important;}
+.welcome li:nth-child(2) {animation-delay:5s !important;}
+.welcome li:nth-child(3) {animation-delay:10s !important;}
+.welcome li:nth-child(4) {animation-delay:15s !important;}
+.welcome li:nth-child(5) {animation-delay:20s !important;}
+.welcome li:nth-child(6) {animation-delay:30s !important;}
 
 
 #bootmenu p {
@@ -184,12 +192,7 @@ typing 5s steps(100, end);
 
 
 
-.welcome li:nth-child(1) {animation-delay:0s !important;}
-.welcome li:nth-child(2) {animation-delay:5s !important;}
-.welcome li:nth-child(3) {animation-delay:10s !important;}
-.welcome li:nth-child(4) {animation-delay:15s !important;}
-.welcome li:nth-child(5) {animation-delay:20s !important;}
-.welcome li:nth-child(6) {animation-delay:30s !important;}
+
 
 #main {
 align-items:flex-start;
@@ -302,10 +305,15 @@ z-index:2;
 #lightbox .stacked {
 box-shadow:5px 5px 5px  #00000050 !important;
 }
-.stacked:focus-within {
+
+.stacked {
+  z-index:9;
+}
+.stacked:focus-within, .stacked:focus, .stacked:active {
 /* border: 2px solid red; */
-z-index:888 !important;
+z-index:888;
 box-shadow:5px 5px 5px  #00000050 !important;
+
 }
 /* PROJECT IMAGE GROUP */
 .projectContainer:first-of-type {
@@ -316,19 +324,15 @@ margin-top:35px !important;
 background-image: linear-gradient(
   to bottom,
   #ffdede 0%,
-  #6fb1d2 10%,
-  #6ab6ec 20%,
-  #5f78c8 30%,
-  #8246bf 40%,
-  #7e3eb7 50%,
-  #964285 60%,
-  #ba44a4 70%,
-  #5f3e92 80%,
-  #1a5f82 90%,
-  #6fb1d2 100%
+  #6fb1d2 30%,
+  #6ab6ec 50%,
+  #000000 80%,
+  #000000 100%
   );
 
 }
+
+
 
 .imagesPre {
 top:0px;
@@ -412,38 +416,10 @@ color:#368a67;
 }
 
 .floating {
-transform: translatey(0px);
+transform: translateY(0px);
 animation: float2 5s ease-in-out infinite;
 }
 /* ANIMATIONS */
-@keyframes float {
-0% {
-transform: translatey(0px);
-}
-50% {
-transform: translatey(-20px);
-}
-100% {
-transform: translatey(0px);
-}
-}
-
-@keyframes float2 {
-0% {
-line-height: 30px;
-transform: translatey(0px);
-}
-55% {
-transform: translatey(-20px);
-}
-60% {
-line-height: 10px;
-}
-100% {
-line-height: 30px;
-transform: translatey(0px);
-}
-}
 
 @keyframes typing {
 from { width: 0 }

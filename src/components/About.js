@@ -14,12 +14,12 @@ return (
 
   <motion.div drag={!isMobile}
   dragMomentum={true}
-  tabIndex={1}
-  initial={{ opacity: 0, scale: 0, left:'-200%', top:'unset',  zIndex:'888'}}
+  tabIndex={2}
+  initial={{ opacity: 0, scale: 0, left:'-200%', top:'unset'}}
   animate={{ opacity: 1, scale: 1, top:0, left:'100px'}}
   transition={{ duration: 0.5 }}
   exit={{ opacity: 0, scale:0, left:'-200%', top:'unset'}}
-  className="stacked absolute flex flex-col  h-[90vh] sm:h-[80%] w-11/12 sm:w-full md:w-10/12 lg:w-11/12 xl:w-11/12 2xl:w-11/12   text-left  sm:!-left-[0px] rounded-lg" id="about">
+  className="stacked absolute flex flex-col  h-[90vh] sm:h-[80%] w-11/12 sm:w-full md:w-10/12 lg:w-11/12 xl:w-11/12 2xl:w-11/12   text-left  sm:!-left-[0px] rounded-lg" id="about"  >
 
         <div className="imagesPre flex flex-row flex-nowrap align-top bg-gray-100">
         <div className="text-left w-8/12 ">about.exe</div>

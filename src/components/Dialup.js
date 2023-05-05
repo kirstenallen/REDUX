@@ -47,44 +47,7 @@ const stopGlimmer = (e) => {
    console.log('removing glimmer effect');
    textArea.classList.remove('glimmer');
  };
-//
-//   useEffect (() => {
-//     const tag = document.createElement('script');
-//     tag.src = 'https://www.youtube.com/iframe_api';
-//     const firstScriptTag = document.getElementsByTagName('script')[0];
-//     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-//
-//
-//
-//     let player;
-//     window.onYouTubeIframeAPIReady = () => {
-//       player = new window.YT.Player('player', {
-//         videoId: 'zL19uMsnpSU',
-//         events: {
-//           'onReady': onPlayerReady,
-//         },
-//         playerVars: {
-//           autoplay:1,
-//           mute:1,
-//           playsinline:1,
-//         },
-//       });
-//     };
-//
-// const onPlayerReady = (event) => {
-//   event.target.playVideo();
-// }
-// const showPlayer = () => {
-//   if (params.SetDialupShow) {
-//     player.startVideo();
-//   }
-//
-// }
-//
-//
-// console.log(params.setDialupShow);
-//
-// });
+
 
   return (
 
@@ -92,7 +55,7 @@ const stopGlimmer = (e) => {
         <motion.div drag={!isMobile}
         dragMomentum={true}
         tabIndex={3}
-        initial={{ opacity: 0, scale: 0, left:'-200%', top:'unset',  zIndex:'888'}}
+        initial={{ opacity: 0, scale: 0, left:'-200%', top:'unset'}}
         animate={{ opacity: 1, scale: 1, top:0, left:'100px'}}
         transition={{ duration: 0.5 }}
          exit={{ opacity: 0, scale:0, left:'-50%', top:'unset'}}

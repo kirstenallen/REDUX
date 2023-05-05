@@ -17,7 +17,7 @@ import { placeHolder } from "../data";
 
 
 const SplineRuntime = React.lazy(() => {
-  return new Promise(resolve => setTimeout(resolve, 500)).then(() =>
+  return new Promise(resolve => setTimeout(resolve,1)).then(() =>
     import('@splinetool/react-spline')
   );
 });
@@ -25,6 +25,7 @@ const SplineRuntime = React.lazy(() => {
 
 export default function Navi() {
 
+  const [stateColor, setStateColor] = useState('black');
 
   useEffect(() => {
     var scrollRotation = debounce(function() {
@@ -62,6 +63,17 @@ export default function Navi() {
   }
   window.addEventListener('scroll', scrollRotation);
   window.addEventListener('onClick', topTop);
+
+var listenScroll = e => {
+    if (window.scrollY > 12000) {
+      setStateColor('white')
+    } else {
+      setStateColor('black')
+    }
+  }
+    window.addEventListener('scroll', listenScroll);
+
+
   })
 
   const [showHome, setHomeShow] = useState(false);
@@ -69,21 +81,19 @@ export default function Navi() {
   const [showWork, setWorkShow] = useState(false);
   const [showDialup, setDialupShow] = useState(false);
 
-// Add zindex when clicked
-  document.querySelectorAll('.stacked').forEach(el => {
-    el.addEventListener('click', () => {
-      el.style.zIndex++
-
-    })
-  })
-
 
 // Close windows by id
   const classToggle = (e) => {
+
     let a = e.currentTarget.parentElement.parentElement.id;
+    let b = e.currentTarget.parentElement.parentElement;
+
+      b.style.zIndex = 0;
+
       if (a === 'console') {
           // console.log('console', a);
             setHomeShow(prevValue => !prevValue);
+
       } else if (a === 'work') {
           // console.log('work', a);
             setWorkShow(prevValue => !prevValue);
@@ -114,45 +124,45 @@ return (
             <li id={navLink.title} className="hover:translate-x-6 border-solid hover:border-transparent border-black border-b sm:hover:translate-x-0 sm:hover:-translate-y-0 transition-all transform-gpu cursor-pointer sm:inline-block sm:px-2 sm:py-2 align-top text-center mx-auto pb-4  "   key={navLink.title}>
             <div className="navItem relative">
             {    navLink.title === 'console' &&
-          <>
-            <SplineRuntime onClick={() => {setHomeShow(!showHome)}} scene="https://prod.spline.design/MJxoGltSbX4HizjE/scene.splinecode" />
+          <div onClick={() => {setHomeShow(!showHome)}} >
+            <SplineRuntime scene="https://prod.spline.design/MJxoGltSbX4HizjE/scene.splinecode" />
             <div className="absolute top-2 left-5 text-green-400 m-auto text-xs  ">
             {showHome ? '●' : null }
             </div>
-            <div className="cursor-pointer rounded-sm  pb-0 text-black m-auto text-xs red-hat tracking-widest text-center uppercase">
+            <div style={{ color: '' + stateColor + ''}} className="cursor-pointer rounded-sm  pb-0 text-black m-auto text-xs red-hat tracking-widest text-center uppercase">
             {navLink.title}
             </div>
-          </>
+          </div>
             ||
             navLink.title === 'work' &&
-        <>
-            <SplineRuntime onClick={() => setWorkShow(!showWork)} scene="https://prod.spline.design/MJxoGltSbX4HizjE/scene.splinecode" />
+        <div onClick={() => setWorkShow(!showWork)}>
+            <SplineRuntime  scene="https://prod.spline.design/MJxoGltSbX4HizjE/scene.splinecode" />
             <div className="absolute top-2 left-5 text-green-400 m-auto text-xs  ">
             {showWork ? '●' : null }
             </div>
-            <div className="cursor-pointer rounded-sm  pb-0 text-black m-auto text-xs red-hat tracking-widest text-center uppercase">
+            <div style={{ color: '' + stateColor + ''}} className="cursor-pointer rounded-sm  pb-0 text-black m-auto text-xs red-hat tracking-widest text-center uppercase">
             {navLink.title}
             </div>
-        </>
+        </div>
             ||
             navLink.title ==='about' &&
-          <>
-            <SplineRuntime onClick={() => setAboutShow(!showAbout)} scene="https://prod.spline.design/MJxoGltSbX4HizjE/scene.splinecode" />
+          <div onClick={() => setAboutShow(!showAbout)} >
+            <SplineRuntime  scene="https://prod.spline.design/MJxoGltSbX4HizjE/scene.splinecode" />
             <div className="absolute top-2 left-5 text-green-400 m-auto text-xs   ">
             {showAbout ? '●' : null }
             </div>
-            <div className="cursor-pointer rounded-sm  pb-0 text-black m-auto text-xs red-hat tracking-widest text-center uppercase">
+            <div style={{ color: '' + stateColor + ''}} className="cursor-pointer rounded-sm  pb-0 text-black m-auto text-xs red-hat tracking-widest text-center uppercase">
             {navLink.title}
             </div>
-        </>
+        </div>
             ||
             navLink.title ==='contact' &&
-          <div className="relative">
-            <SplineRuntime onClick={() => setDialupShow(!showDialup)} scene="https://prod.spline.design/4cYqVhXffG4uLh7O/scene.splinecode" />
+          <div onClick={() => setDialupShow(!showDialup)}>
+            <SplineRuntime  scene="https://prod.spline.design/4cYqVhXffG4uLh7O/scene.splinecode" />
             <div className="absolute top-2 left-5 text-green-400 m-auto text-xs   ">
             {showDialup ? '●' : null }
             </div>
-            <div className="cursor-pointer rounded-sm  pb-0 text-black m-auto text-xs red-hat tracking-widest text-center uppercase">
+            <div style={{ color: '' + stateColor + ''}} className="cursor-pointer rounded-sm  pb-0 text-black m-auto text-xs red-hat tracking-widest text-center uppercase">
             {navLink.title}
             </div>
         </div>
@@ -165,9 +175,13 @@ return (
             </ul>
 
 
+
+
+
+
       <AnimatePresence initial={true}>
       {showHome ?
-      <Home toggle={classToggle} setHomeShow={showHome}   />
+      <Home toggle={classToggle} setHomeShow={showHome}/>
       : ''}
       </ AnimatePresence>
 
@@ -176,12 +190,14 @@ return (
       </ AnimatePresence>
 
       <AnimatePresence initial={true}>
-      {showAbout ? <About toggle={classToggle} setAboutShow={showAbout}  /> : ''}
+      {showAbout ? <About toggle={classToggle} setAboutShow={showAbout}/> : ''}
       </ AnimatePresence>
 
       <AnimatePresence initial={true}>
-      {showDialup ? <Dialup toggle={classToggle} setDialupShow={showDialup}  /> : ''}
+      {showDialup ? <Dialup toggle={classToggle} setDialupShow={showDialup} /> : ''}
       </ AnimatePresence>
+
+
   </div>
 </>
 )

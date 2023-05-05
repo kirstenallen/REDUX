@@ -5,17 +5,18 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { motion } from "framer-motion";
 
-const { useState } = React;
+const { useState} = React;
 
 
 
-const Work = params =>  {
+const Work = (params, props) =>  {
     const [lightboxDisplay, setLightBoxDisplay] = React.useState(false);
     const [imageToShow, setImageToShow] = useState("");
     const [altToShow, setAltToShow] = useState("");
     const [blurbToShow, setBlurbToShow] = useState("");
 
     const isMobile = window.innerWidth < 768;
+
 
 
     const showBlurb = (year) => {
@@ -48,11 +49,11 @@ const Work = params =>  {
         <motion.div    drag={!isMobile}
         dragMomentum={true}
         tabIndex={1}
-        initial={{ opacity: 0, scale: 0, left:'-200%', top:'unset',  zIndex:'888'}}
+        initial={{ opacity: 0, scale: 0, left:'-200%', top:'unset'}}
         animate={{ opacity: 1, scale: 1, top:0, left:'100px'}}
         transition={{ duration: 0.5 }}
         exit={{ opacity: 0, scale:0, left:'-200%', top:'unset'}}
-        className="stacked absolute flex flex-col h-[90vh] sm:h-[80%] w-11/12 sm:w-full md:w-10/12 lg:w-11/12 xl:w-11/12 2xl:w-11/12   text-left  sm:!-left-[0px] rounded-lg" id="work">
+        className="stacked absolute flex flex-col h-[90vh] sm:h-[80%] w-11/12 sm:w-full md:w-10/12 lg:w-11/12 xl:w-11/12 2xl:w-11/12   text-left  sm:!-left-[0px] rounded-lg" id="work" >
               <div className="imagesPre flex flex-row flex-nowrap align-top bg-gray-100">
                 <div className="text-left w-10/12 ">work.exe</div>
                 <div className="w-2/12 inline-block text-right text-red-400 font-bold cursor-pointer" onClick={params.toggle} >x</div>
@@ -60,7 +61,7 @@ const Work = params =>  {
                 <div className="images bg-emerald-100 sm:w-full w-full  m-auto relative  overflow-auto rounded-b-lg" style={{'height':'-webkit-fill-available'}}>
                 <div className="relative h-full flex flex-col overflow-auto p-5" >
           {projects.map((project) => (
-            <div key={project.title} className="projectContainer mt-16 relative">
+            <div key={project.title} className="projectContainer mt-16 relative" >
             <div id={project.title} className="imagerow relative flex flex-row flex-wrap w-full white-bg  ">
               <div className="absolute -top-8 left-0 rounded-lg bg-gray-200 text-sm mx-auto font-bold text-gray-800 pt-2 px-10 pb-4"> > {project.category}
               </div>
@@ -75,7 +76,7 @@ const Work = params =>  {
               <LazyLoadImage placeholderSrc={placeHolder} className="thumbnail h-[150px] sm:h-[100px] md:h-[100px] lg:h-[100px] overflow-hidden object-cover align-center justify-center block m-auto text-center" src={c.imageurl} />
               </div>
                 <p className="break-word w-6/12 text-center red-hat text-sm my-5 mx-auto inline-block">{c.imageurl.slice(18).slice(0, -4)} </p>
-                  <p className="break-word w-6/12 text-center red-hat text-xs text-black mx-auto inline-block">{c.imageurl.slice(-3)}</p>
+                  <p className="break-word w-6/12 text-center red-hat text-xs text-black mx-auto inline-block">{c.caption}</p>
                 </div>
             ))}
             </div>
