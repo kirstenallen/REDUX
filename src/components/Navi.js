@@ -23,9 +23,14 @@ const SplineRuntime = React.lazy(() => {
 });
 
 
-export default function Navi() {
+const Navi = (props) => {
 
-  const [stateColor, setStateColor] = useState('black');
+  const [stateColor, setStateColor] = useState('gray');
+  const [showHome, setHomeShow] = useState(false);
+  const [showAbout, setAboutShow] = useState(false);
+  const [showWork, setWorkShow] = useState(false);
+  const [showDialup, setDialupShow] = useState(false);
+
 
   useEffect(() => {
     var scrollRotation = debounce(function() {
@@ -68,7 +73,7 @@ var listenScroll = e => {
     if (window.scrollY > 12000) {
       setStateColor('white')
     } else {
-      setStateColor('black')
+      setStateColor('gray')
     }
   }
     window.addEventListener('scroll', listenScroll);
@@ -76,10 +81,8 @@ var listenScroll = e => {
 
   })
 
-  const [showHome, setHomeShow] = useState(false);
-  const [showAbout, setAboutShow] = useState(false);
-  const [showWork, setWorkShow] = useState(false);
-  const [showDialup, setDialupShow] = useState(false);
+
+
 
 
 // Close windows by id
@@ -108,12 +111,15 @@ return (
 
 <>
   <div className=" fixed top-0 left-0 flex align-top  w-full h-full text-gray-400 overflow-hidden">
-      <ul className="navLinks dock absolute top-20 w-1/12 text-right sm:bottom-10 sm:w-full sm:left-0 sm:text-center">
+
+      <ul className="navLinks dock absolute top-20 w-1/12 text-right sm:bottom-10 sm:w-full sm:left-0 sm:text-center" style={{pointerEvents:'all'}}>
+
       <div className="aniScrollContainer sm:hidden">
         <div className="cursor-pointer" onClick={() => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'});}}>
         <img alt="Scroll to Top" id="aniImage" src="../imagesshrunk/computer_0001.png" />
         </div>
       </div>
+
       <div className="sm:hidden">
         <Clock />
       </div>
@@ -123,13 +129,15 @@ return (
             {navLinks.map((navLink) => (
             <li id={navLink.title} className="hover:translate-x-6 border-solid hover:border-transparent border-black border-b sm:hover:translate-x-0 sm:hover:-translate-y-0 transition-all transform-gpu cursor-pointer sm:inline-block sm:px-2 sm:py-2 align-top text-center mx-auto pb-4  "   key={navLink.title}>
             <div className="navItem relative">
+
+
             {    navLink.title === 'console' &&
           <div onClick={() => {setHomeShow(!showHome)}} >
             <SplineRuntime scene="https://prod.spline.design/MJxoGltSbX4HizjE/scene.splinecode" />
             <div className="absolute top-2 left-5 text-green-400 m-auto text-xs  ">
             {showHome ? '●' : null }
             </div>
-            <div style={{ color: '' + stateColor + ''}} className="cursor-pointer rounded-sm  pb-0 text-black m-auto text-xs red-hat tracking-widest text-center uppercase">
+            <div style={{ color: '' + stateColor + ''}} className="cursor-pointer rounded-sm  pb-0 text-gray-500 m-auto text-xs red-hat tracking-widest text-center uppercase">
             {navLink.title}
             </div>
           </div>
@@ -140,7 +148,7 @@ return (
             <div className="absolute top-2 left-5 text-green-400 m-auto text-xs  ">
             {showWork ? '●' : null }
             </div>
-            <div style={{ color: '' + stateColor + ''}} className="cursor-pointer rounded-sm  pb-0 text-black m-auto text-xs red-hat tracking-widest text-center uppercase">
+            <div style={{ color: '' + stateColor + ''}} className="cursor-pointer rounded-sm  pb-0 text-gray-500 m-auto text-xs red-hat tracking-widest text-center uppercase">
             {navLink.title}
             </div>
         </div>
@@ -151,7 +159,7 @@ return (
             <div className="absolute top-2 left-5 text-green-400 m-auto text-xs   ">
             {showAbout ? '●' : null }
             </div>
-            <div style={{ color: '' + stateColor + ''}} className="cursor-pointer rounded-sm  pb-0 text-black m-auto text-xs red-hat tracking-widest text-center uppercase">
+            <div style={{ color: '' + stateColor + ''}} className="cursor-pointer rounded-sm  pb-0 text-gray-500 m-auto text-xs red-hat tracking-widest text-center uppercase">
             {navLink.title}
             </div>
         </div>
@@ -162,7 +170,7 @@ return (
             <div className="absolute top-2 left-5 text-green-400 m-auto text-xs   ">
             {showDialup ? '●' : null }
             </div>
-            <div style={{ color: '' + stateColor + ''}} className="cursor-pointer rounded-sm  pb-0 text-black m-auto text-xs red-hat tracking-widest text-center uppercase">
+            <div style={{ color: '' + stateColor + ''}} className="cursor-pointer rounded-sm  pb-0 text-gray-500 m-auto text-xs red-hat tracking-widest text-center uppercase">
             {navLink.title}
             </div>
         </div>
@@ -178,27 +186,29 @@ return (
 
 
 
+                          <AnimatePresence initial={true}>
+                          {showHome ?
+                          <Home toggle={classToggle} setHomeShow={showHome}/>
+                          : ''}
+                          </ AnimatePresence>
 
-      <AnimatePresence initial={true}>
-      {showHome ?
-      <Home toggle={classToggle} setHomeShow={showHome}/>
-      : ''}
-      </ AnimatePresence>
+                          <AnimatePresence initial={true}>
+                          {showWork ? <Work toggle={classToggle} setWorkShow={showWork} /> : ''}
+                          </ AnimatePresence>
 
-      <AnimatePresence initial={true}>
-      {showWork ? <Work toggle={classToggle} setWorkShow={showWork} /> : ''}
-      </ AnimatePresence>
+                          <AnimatePresence initial={true}>
+                          {showAbout ? <About toggle={classToggle} setAboutShow={showAbout}/> : ''}
+                          </ AnimatePresence>
 
-      <AnimatePresence initial={true}>
-      {showAbout ? <About toggle={classToggle} setAboutShow={showAbout}/> : ''}
-      </ AnimatePresence>
+                          <AnimatePresence initial={true}>
+                          {showDialup ? <Dialup toggle={classToggle} setDialupShow={showDialup} /> : ''}
+                          </ AnimatePresence>
 
-      <AnimatePresence initial={true}>
-      {showDialup ? <Dialup toggle={classToggle} setDialupShow={showDialup} /> : ''}
-      </ AnimatePresence>
 
 
   </div>
 </>
 )
 }
+
+export default Navi;

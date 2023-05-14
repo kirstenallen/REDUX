@@ -13,7 +13,7 @@ const scrollBottom = (params) => {
 return (
   <footer>
   <div className="w-full" onClick={scrollBottom}>
-       <div className="marquee red-hat text-black" >
+       <div className="marquee red-hat text-black">
            <p >DO NOT CLICK THE FOOTER </p>
 
        </div>

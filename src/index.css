@@ -5,12 +5,13 @@
 
 
 h1 {
-  font-size:2.5em;
+  font-size:10em;
+  line-height:1em;
 
 }
 h3 {
-  font-size:1em;
-
+  font-size:6em;
+  line-height:1em;
 }
 
 ::-webkit-scrollbar {
@@ -49,9 +50,8 @@ animation-fill-mode: forwards;
 
 #lightboxWindow {
 
-max-width:80%;
+max-width:100%;
 max-height:80%;
-
 display: flex;
 flex-direction: column;
 justify-content: space-between;
@@ -174,7 +174,19 @@ typing 5s steps(100, end);
 
 }
 
+.typing {
+  display:block;
+  position:relative;
+  overflow:hidden;
+margin:0 auto;
+  white-space:nowrap;
+  opacity:0%;
+  animation: fadeBackground .1s ease 1s forwards,
+  typing 5s steps(111, end);
+  animation-delay:2s !important;
 
+
+}
 #bootmenu .bootload {
 display:block;
 position:relative;
@@ -230,7 +242,7 @@ align-self:stretch;
 /* NAVIGATION */
 
 .navLinks {
-z-index: 90;
+z-index: 1000;
 position:absolute;
 /* top:75px; */
 
@@ -295,7 +307,7 @@ margin-top:-25px;
 padding-top:53px;
 padding-bottom:33px;
 height:max-content;
-z-index:0;
+
 }
 .imagerow {
 
@@ -307,7 +319,7 @@ box-shadow:5px 5px 5px  #00000050 !important;
 }
 
 .stacked {
-  z-index:9;
+  z-index:777;
 }
 .stacked:focus-within, .stacked:focus, .stacked:active {
 /* border: 2px solid red; */
@@ -332,6 +344,9 @@ background-image: linear-gradient(
 
 }
 
+.h-minustop {
+  height:calc(100% - 17px);
+}
 
 
 .imagesPre {
@@ -517,6 +532,11 @@ transform: translateX(-100%);
 }
 }
 
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
 /* FOOTER */
 .marquee {
 height: 25px;
@@ -534,8 +554,9 @@ background-color: transparent;
 position: fixed;
 overflow-x: hidden;
 width: 100%;
-z-index: 99;
+z-index: 999;
 background-color:orange;
+cursor:pointer;
 }
 
 .marquee p {
@@ -559,9 +580,29 @@ font-weight: bold;
 }
 
 
+@font-face {
+  font-family: "Raydis";
+  src: local("Raydis"),
+  url("./fonts/RAYDIS.ttf") format("truetype");
+  font-weight:bold;
+}
+.raydis {
+  font-family: "Raydis";
+
+}
 
 @media (max-width: 640px) {
 .navLinks {
 top:unset !important;
 }
+h1 {
+  font-size:4em !important;
+  line-height:1em;
+
+}
+h3 {
+  font-size:3em !important;
+  line-height:1em;
+}
+
 }

@@ -90,7 +90,7 @@ const Work = (params, props) =>  {
       <motion.div
        drag={!isMobile}
       exit={{ opacity: 0, scale:0, left:'-200%', top:'unset'}}
-      dragMomentum={true}  id="lightboxWindow" className="bg-white rounded-md stacked absolute flex flex-col h-5/6 w-10/12 sm:w-full md:w-10/12 lg:w-10/12 xl:w-10/12 2xl:w-full   text-left  sm:!-left-[0px]" onClick={(e) => e.stopPropagation()}>
+      dragMomentum={true}  id="lightboxWindow" className="bg-white rounded-md stacked absolute flex flex-col h-5/6 w-10/12 sm:!w-full md:w-10/12 lg:w-10/12 xl:w-10/12 2xl:w-full   text-left  sm:!-left-[0px]" onClick={(e) => e.stopPropagation()}>
       <div className="imagesPre flex flex-row flex-nowrap align-top ">
       <div className="text-left w-11/12">{altToShow}</div>
       <div className="w-1/12  text-right text-red-400"  onClick={hideLightBox} >x</div>

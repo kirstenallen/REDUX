@@ -29,7 +29,7 @@ return (
         <div className="images bg-blue-100 sm:w-full w-full  m-auto relative  overflow-auto rounded-b-lg">
 
 
-        <div className="social sticky top-0 grid grid-cols-6 gap-1 content-evenly mx-auto bg-gray-200 py-5 text-center">
+        <div className="social sticky top-0 grid grid-cols-6 gap-1 content-evenly mx-auto bg-gray-100 py-5 text-center">
         <a href="./imagesshrunk/kirstenallen_resume_2023.pdf" className="text-black red-hat" target="_blank">
         <span className="sm:hidden">resumé &nbsp;</span>
         <span className="fas text-black fas-lg fa-sticky-note"></span>
@@ -58,17 +58,19 @@ return (
         </a>
         </div>
 
-
-        <div className="red-hat w-8/12 mx-auto text-center text-gray-900 mt-10">
-        Kirsten is a graphic designer, front end developer, jack-of-all-trades living in Austin, TX looking for <span className="bold code-green">remote / freelance</span> work.
+        <h3 className="raydis w-8/12 mx-auto text-gray-100 text-center" style={{marginTop:'-5px'}}>
+        hi there!
+        </h3>
+        <div className="red-hat w-6/12 sm:w-10/12 lg:w-10/12 xl:w-10/12 mx-auto text-center sm:text-left  text-gray-900 mt-10">
+        Kirsten is a graphic designer, front end developer, jack-of-all-trades living in Austin, TX looking for <span className="bold code-green">fulltime / contract / remote / freelance</span> work.
         <br/>
 
 
-        <h1 className="sm:text-2xl text-4xl font-medium title-font  text-gray-900 mb-5 sectionHeader red-hat text-xl mt-10 ">
-        <div className="">experience / hobbies</div>
-        </h1>
+        <h3 className="sm:text-2xl text-4xl font-medium title-font  text-gray-900 mb-5 sectionHeader red-hat text-xl mt-10 ">
+        <div className="">experience</div>
+        </h3>
 
-        <ul className="sm:grid-cols-1 md:grid-cols-1 font-light red-hat text-left grid grid-cols-2  gap-4 mx-auto mx-auto block w-8/12">
+        <ul className="sm:grid-cols-1 md:grid-cols-1 font-light red-hat text-right lg:text-center xl:text-center md:text-center grid grid-cols-2  gap-4 mx-auto mx-auto block w-8/12">
         <li>graphic design</li>
         <li>illustration</li>
         <li>package design</li>
@@ -83,11 +85,11 @@ return (
         <li>stand up comedy</li>
         </ul>
 
-        <h1 className="sm:text-2xl text-4xl font-medium title-font  text-gray-900 mb-5 sectionHeader red-hat text-xl mt-10 ">
+        <h3 className="sm:text-2xl text-4xl font-medium title-font  text-gray-900 mb-5 sectionHeader red-hat text-xl mt-10 ">
         <div className="">specifics</div>
-        </h1>
+        </h3>
 
-        <ul className="sm:grid-cols-1 md:grid-cols-1 font-light red-hat text-left grid grid-cols-2  gap-4 mx-auto mx-auto block w-8/12">
+        <ul className="sm:grid-cols-1 md:grid-cols-1 font-light red-hat text-right  lg:text-center xl:text-center md:text-center  grid grid-cols-2  gap-4 mx-auto mx-auto block w-8/12">
         <li>HTML</li>
         <li>CSS</li>
         <li>React</li>
@@ -110,7 +112,7 @@ return (
 
         <div className="placeholder"></div>
         <div className="sectionHeader courier-prime">
-        <p>the secret code is : skifree</p>
+        <p>made ya look</p>
         <br/>
         <br/>
         </div>
