@@ -14,7 +14,7 @@ const Work = (params, props) =>  {
     const [imageToShow, setImageToShow] = useState("");
     const [altToShow, setAltToShow] = useState("");
     const [blurbToShow, setBlurbToShow] = useState("");
-
+    const [linkShow, setLinkShow] = useState("");
     const isMobile = window.innerWidth < 768;
 
 
@@ -31,6 +31,9 @@ const Work = (params, props) =>  {
       setImageToShow(image);
       setLightBoxDisplay(true);
     };
+    const showLink = (link) => {
+      setLinkShow(link);
+    }
     const hideLightBox = () => {
 
       let lightbox = document.getElementById('lightbox');
@@ -54,9 +57,10 @@ const Work = (params, props) =>  {
         transition={{ duration: 0.5 }}
         exit={{ opacity: 0, scale:0, left:'-200%', top:'unset'}}
         className="stacked absolute flex flex-col h-[90vh] sm:h-[80%] w-11/12 sm:w-full md:w-10/12 lg:w-11/12 xl:w-11/12 2xl:w-11/12   text-left  sm:!-left-[0px] rounded-lg" id="work" >
-              <div className="imagesPre flex flex-row flex-nowrap align-top bg-gray-100">
+              <div className="imagesPre flex flex-row flex-nowrap align-top bg-gray-100  justify-between ">
                 <div className="text-left w-10/12 ">work.exe</div>
-                <div className="w-2/12 inline-block text-right text-red-400 font-bold cursor-pointer" onClick={params.toggle} >x</div>
+
+                  <div className="w-[20px] h-[20px]  text-right text-white bg-red-400 rounded-full px-[4px] py-[2px] cursor-pointer"  onClick={params.toggle} >✕</div>
               </div>
                 <div className="images bg-emerald-100 sm:w-full w-full  m-auto relative  overflow-auto rounded-b-lg" style={{'height':'-webkit-fill-available'}}>
                 <div className="relative h-full flex flex-col overflow-auto p-5" >
@@ -72,7 +76,7 @@ const Work = (params, props) =>  {
                   </div>
             {project.content.map((c, i) => (
               <div key={i} className=" flex flex-col w-2/12 sm:w-full md:w-1/2 lg:w-3/12 xl:w-3/12 2xl:w-2/12 my-5 md:my-5 md:mx-0 sm:w-full ">
-              <div className="cursor-zoom-in mx-auto justify-center align-center" onClick={() => {showImage(c.imageurl); showAlt(c.caption); showBlurb(c.year)}}>
+              <div className="cursor-zoom-in mx-auto justify-center align-center" onClick={() => {showImage(c.imageurl); showAlt(c.caption); showBlurb(c.year); showLink(c.link);}}>
               <LazyLoadImage placeholderSrc={placeHolder} className="thumbnail h-[150px] sm:h-[100px] md:h-[100px] lg:h-[100px] overflow-hidden object-cover align-center justify-center block m-auto text-center" src={c.imageurl} />
               </div>
                 <p className="break-word w-6/12 text-center red-hat text-sm my-5 mx-auto inline-block">{c.imageurl.slice(18).slice(0, -4)} </p>
@@ -91,12 +95,13 @@ const Work = (params, props) =>  {
        drag={!isMobile}
       exit={{ opacity: 0, scale:0, left:'-200%', top:'unset'}}
       dragMomentum={true}  id="lightboxWindow" className="bg-white rounded-md stacked absolute flex flex-col h-5/6 w-10/12 sm:!w-full md:w-10/12 lg:w-10/12 xl:w-10/12 2xl:w-full   text-left  sm:!-left-[0px]" onClick={(e) => e.stopPropagation()}>
-      <div className="imagesPre flex flex-row flex-nowrap align-top ">
+      <div className="imagesPre flex flex-row flex-nowrap align-top justify-between ">
       <div className="text-left w-11/12">{altToShow}</div>
-      <div className="w-1/12  text-right text-red-400"  onClick={hideLightBox} >x</div>
+      <div className="w-[20px] h-[20px]  text-right text-white bg-red-400 rounded-full px-[4px] py-[2px] cursor-pointer"  onClick={hideLightBox} >✕</div>
       </div>
       <img alt={altToShow} id="lightbox-img" src={imageToShow} style={{pointerEvents:'none'}} />
       <div className="text-center red-hat font-light text-black pt-5 pb-5">{blurbToShow}</div>
+      {linkShow ? <div className="text-center red-hat font-light text-black pt-5 pb-5"><a href={linkShow} target="_blank">live link</a></div> : ''  }
       </motion.div>
       </div>
   : ''}

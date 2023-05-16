@@ -55,12 +55,22 @@ year: '2023 - Illustrator - UpliftDesk',
 imageurl: "./imagesshrunk/UP/comparison_chart.png",
 caption:"Comparison Chart Design and Development",
 year: '2021 - Bigcommerce Javascript Solution - UpliftDesk',
+link: 'https://xd.adobe.com/view/fdf5d637-c6a2-443e-9453-5581bb4cf395-a8a6/?fullscreen'
 },
 {
 imageurl: "./imagesshrunk/UP/sale_page.png",
 caption:"Sale Page Redesign",
 year: '2023 - Adobe XD - UpliftDesk',
 },
+{
+imageurl: "./imagesshrunk/UP/home_page.jpg",
+caption:"Home Page Redesign",
+year: '2022 - Adobe XD - UpliftDesk',
+link: 'https://xd.adobe.com/view/a40a3e91-2c41-470f-a9c1-065238b1b675-f159/?fullscreen'
+},
+
+
+
 ],
 },
 {
@@ -207,10 +217,20 @@ year: '2020 - Photoshop - Stranger',
 },
 {
 title: "Posters",
-category: "POST",
+category: "ART",
 icon: "",
 description: "Mixed Media Posters for the Savannah Stage Company and more.",
 content: [
+  {
+  imageurl: "./imagesshrunk/SC/emergence.jpg",
+  caption:"Emergence Gallery Show",
+  year: '2013 - Photoshop - Client',
+  },
+  {
+  imageurl: "./imagesshrunk/SC/layout.jpg",
+  caption:"Poster Variations for a Construction Company",
+  year: '2023 - Illustrator/Photoshop - Client',
+  },
 {
 imageurl: "./imagesshrunk/SC/antigone.jpg",
 caption:"Antigone",
@@ -296,7 +316,7 @@ year: '2016 - Oil - Personal',
 },
 {
 imageurl: "./imagesshrunk/PT/anonymous_building.jpg",
-caption:"T-Square",
+caption:"Anonymous Building #4",
 year: '2016 - Oil - Personal',
 },
 {

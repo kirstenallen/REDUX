@@ -21,9 +21,10 @@ return (
   exit={{ opacity: 0, scale:0, left:'-200%', top:'unset'}}
   className="stacked absolute flex flex-col  h-[90vh] sm:h-[80%] w-11/12 sm:w-full md:w-10/12 lg:w-11/12 xl:w-11/12 2xl:w-11/12   text-left  sm:!-left-[0px] rounded-lg" id="about"  >
 
-        <div className="imagesPre flex flex-row flex-nowrap align-top bg-gray-100">
-        <div className="text-left w-8/12 ">about.exe</div>
-        <div className="w-4/12 inline-block text-right font-bold text-red-400" style={{zIndex:999}} onClick={params.toggle} >x</div>
+        <div className="imagesPre flex flex-row flex-nowrap align-top bg-gray-100 justify-between">
+        <div className="text-left w-11/12 ">about.exe</div>
+
+            <div className="w-[20px] h-[20px]  text-right text-white bg-red-400 rounded-full px-[4px] py-[2px] cursor-pointer"  onClick={params.toggle}  >✕</div>
         </div>
 
         <div className="images bg-blue-100 sm:w-full w-full  m-auto relative  overflow-auto rounded-b-lg">
@@ -61,11 +62,16 @@ return (
         <h3 className="raydis w-8/12 mx-auto text-gray-100 text-center" style={{marginTop:'-5px'}}>
         hi there!
         </h3>
-        <div className="red-hat w-6/12 sm:w-10/12 lg:w-10/12 xl:w-10/12 mx-auto text-center sm:text-left  text-gray-900 mt-10">
-        Kirsten is a graphic designer, front end developer, jack-of-all-trades living in Austin, TX looking for <span className="bold code-green">fulltime / contract / remote / freelance</span> work.
+        <div className="red-hat w-6/12 sm:w-10/12 lg:w-8/12 xl:w-8/12 mx-auto text-center sm:text-left  text-gray-900 mt-10">
+        Kirsten is a graphic designer, front end developer swiss-army-knife <br/> living in Austin, TX looking for <span className="bold code-green">fulltime / contract / remote / freelance</span> work.
         <br/>
-
-
+        <br/>
+        <a href="./imagesshrunk/kirstenallen_resume_2023.pdf" target="_blank" className=" red-hat" target="_blank">current resumé <span className="fas fas-lg fa-sticky-note"></span></a>
+        <br/>
+        <a href="./imagesshrunk/GRAV_Reference_Letter.pdf" target="_blank" className=" red-hat" target="_blank">reference letter 2019 <span className="fas fas-lg fa-sticky-note"></span></a>
+        <br/>
+        <a href="./imagesshrunk/UPLIFT_Reference_Letter.pdf" target="_blank" className="red-hat" target="_blank">reference letter 2023 <span className="fas fas-lg fa-sticky-note"></span></a>
+        <br/>
         <h3 className="sm:text-2xl text-4xl font-medium title-font  text-gray-900 mb-5 sectionHeader red-hat text-xl mt-10 ">
         <div className="">experience</div>
         </h3>

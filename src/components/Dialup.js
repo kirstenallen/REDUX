@@ -62,9 +62,10 @@ const stopGlimmer = (e) => {
         key="dialup"
         className="stacked absolute flex flex-col w-6/12 h-[60%] sm:h-[60%] lg:w-10/12 xl:w-10/12 md:w-10/12 sm:w-full h-5/6  text-left  sm:!-left-[0px] rounded-md bg-gray-100" id="dialup" >
 
-              <div className="imagesPre flex flex-row flex-nowrap align-top">
+              <div className="imagesPre flex flex-row flex-nowrap align-top justify-between">
                 <div className="text-left w-10/12 ">internet.exe</div>
-                <div className="w-2/12 inline-block text-right text-red-400" onClick={params.toggle} >x</div>
+
+                    <div className="w-[20px] h-[20px]  text-right text-white bg-red-400 rounded-full px-[4px] py-[2px] cursor-pointer"  onClick={params.toggle}  >✕</div>
               </div>
 
 
