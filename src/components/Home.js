@@ -31,9 +31,9 @@ const Home = (props) => {
               <ul className="welcome">
               <li>hi</li>
 
-              <li><a href="./imagesshrunk/kirstenallen_resume_2023.pdf" target="_blank" className="text-yellow-600 red-hat" target="_blank">resumé <span className="fas text-yellow-600 fas-lg fa-sticky-note"></span></a></li>
-              <li><a href="./imagesshrunk/GRAV_Reference_Letter.pdf" target="_blank" className="text-yellow-200 red-hat" target="_blank">reference letter 2019 <span className="fas text-yellow-200 fas-lg fa-sticky-note"></span></a></li>
-              <li><a href="./imagesshrunk/UPLIFT_Reference_Letter.pdf" target="_blank" className="text-yellow-200 red-hat" target="_blank">reference letter 2023 <span className="fas text-yellow-200 fas-lg fa-sticky-note"></span></a></li>
+              <li><a href="./imagesshrunk/kirstenallen_resume_2023.pdf" target="_blank" className="text-yellow-600 red-hat" rel="noreferrer">resumé <span className="fas text-yellow-600 fas-lg fa-sticky-note"></span></a></li>
+              <li><a href="./imagesshrunk/GRAV_Reference_Letter.pdf" target="_blank" className="text-yellow-200 red-hat" rel="noreferrer">reference letter 2019 <span className="fas text-yellow-200 fas-lg fa-sticky-note"></span></a></li>
+              <li><a href="./imagesshrunk/UPLIFT_Reference_Letter.pdf" target="_blank" className="text-yellow-200 red-hat" rel="noreferrer">reference letter 2023 <span className="fas text-yellow-200 fas-lg fa-sticky-note"></span></a></li>
 
               <li>click the <span className="text-yellow-600 italic">folders</span></li>
               <li><span className="text-green-600">find the secret game</span></li>

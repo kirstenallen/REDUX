@@ -14,6 +14,8 @@ h3 {
   line-height:1em;
 }
 
+/* SCROLLBAR FIXES*/
+
 ::-webkit-scrollbar {
 display:none;
 -ms-overflow-style:none;
@@ -31,12 +33,12 @@ padding: 5px 0 0 5px;
 :-ms-input-placeholder { /* Internet Explorer 10+ */
 padding: 5px 0 0 5px;
 }
-extarea:focus, input:focus{
+textarea:focus, input:focus{
 outline: none;
 }
 
 
-/* POP UP IMAGES */
+/* LIGHTBOX  */
 #lightbox {
 display: block;
 position: absolute;
@@ -76,17 +78,56 @@ display:inline !important ;
 .lazy-load-image-background {
 width:50px;
 height:50px;
-
 top: 50%;
 left: 50%;
 }
+
+
 .player2 {
 font-family: 'Press Start 2P', cursive;
 }
-/* .lazy-load-image-loaded {
-display:block!important;
-position:initial;
-} */
+
+
+
+
+
+/* CONSOLE */
+.code-yellow {
+color:#c37a0e !important;
+
+}
+.code-green {
+color:#409844 !important;
+}
+ul.welcome li:before {
+content:'>';
+color:#9c5dd6!important;
+padding-right:15px;
+
+}
+.welcome li {
+display:block;
+position:relative;
+overflow:hidden;
+white-space:nowrap;
+left:0;
+opacity:0%;
+animation: fadeBackground .25s ease 1s forwards,
+typing 5s steps(100, end);
+}
+
+.welcome li:nth-child(1) {animation-delay:0s !important;}
+.welcome li:nth-child(2) {animation-delay:5s !important;}
+.welcome li:nth-child(3) {animation-delay:10s !important;}
+.welcome li:nth-child(4) {animation-delay:15s !important;}
+.welcome li:nth-child(5) {animation-delay:20s !important;}
+.welcome li:nth-child(6) {animation-delay:30s !important;}
+
+
+
+/* BOOTMENU */
+
+
 #bootmenu p:nth-child(1) {animation-delay:0s !important;}
 #bootmenu p:nth-child(2) {animation-delay:.25s !important;}
 #bootmenu p:nth-child(3) {animation-delay:.5s !important;}
@@ -99,14 +140,6 @@ position:initial;
 #bootmenu p:nth-child(10) {animation-delay:1.9s !important;}
 #bootmenu p:nth-child(11) {animation-delay:2s !important;}
 #bootmenu p:nth-child(12) {animation-delay:2.2s !important;}
-
-
-.welcome li:nth-child(1) {animation-delay:0s !important;}
-.welcome li:nth-child(2) {animation-delay:5s !important;}
-.welcome li:nth-child(3) {animation-delay:10s !important;}
-.welcome li:nth-child(4) {animation-delay:15s !important;}
-.welcome li:nth-child(5) {animation-delay:20s !important;}
-.welcome li:nth-child(6) {animation-delay:30s !important;}
 
 
 #bootmenu p {
@@ -133,6 +166,25 @@ width:100%;
 border:1px solid #ffffff;
 }
 
+#bootmenu .bootload {
+display:block;
+position:relative;
+overflow:hidden;
+white-space:nowrap;
+left:0;
+opacity:0%;
+animation:
+fadeBackground .25s ease 1s forwards,
+typing 5s steps(100, end);
+}
+
+
+
+
+/* NAVIGATION */
+
+
+
 /*aniscroll*/
 .aniScrollContainer {
 position:absolute;
@@ -146,108 +198,10 @@ width:100px;
 position:absolute;
 }
 
-/*main*/
-.code-yellow {
-color:#c37a0e !important;
-
-}
-.code-green {
-color:#409844 !important;
-}
-ul.welcome li:before {
-content:'>';
-color:#9c5dd6!important;
-padding-right:15px;
-
-}
-.welcome li {
-display:block;
-position:relative;
-overflow:hidden;
-
-white-space:nowrap;
-left:0;
-opacity:0%;
-
-animation: fadeBackground .25s ease 1s forwards,
-typing 5s steps(100, end);
-
-}
-
-.typing {
-  display:block;
-  position:relative;
-  overflow:hidden;
-margin:0 auto;
-  white-space:nowrap;
-  opacity:0%;
-  animation: fadeBackground .1s ease 1s forwards,
-  typing 5s steps(111, end);
-  animation-delay:2s !important;
-
-
-}
-#bootmenu .bootload {
-display:block;
-position:relative;
-overflow:hidden;
-
-white-space:nowrap;
-left:0;
-opacity:0%;
-
-animation: fadeBackground .25s ease 1s forwards,
-typing 5s steps(100, end);
-}
-
-
-
-
-
-
-
-#main {
-align-items:flex-start;
-align-content:flex-start;
-
-}
-/* .container {
-max-width:unset;
-max-height:unset;
-height:inherit;
-} */
-#console {
-align-self:stretch;
-
-}
-
-#work {
-align-self:stretch;
-
-
-
-}
-
-#about {
-align-self:stretch;
-
-
-
-}
-#dialup {
-align-self:stretch;
-
-}
-
-/* NAVIGATION */
-
 .navLinks {
 z-index: 1000;
 position:absolute;
 /* top:75px; */
-
-
-
 }
 
 .navLinks img {
@@ -269,6 +223,39 @@ border-top-right-radius:5px;
 border-bottom-right-radius:5px;
 padding:0px;
 width:100px;
+}
+
+.blue {
+  color:  #6fb1d2;
+}
+
+#main {
+align-items:flex-start;
+align-content:flex-start;
+
+}
+#console, #work, #about, #dialup {
+align-self:stretch;
+}
+#intro h1::after{
+  content: " | ";
+  opacity:0;
+  font-family:"Raydis";
+  -webkit-text-fill-color: #6fb1d2;
+  color:  #6fb1d2;
+  margin:0; padding:0;
+  display: inline-block;
+  animation: cursor-blink 1s steps(2);
+  animation-iteration-count: 15;
+}
+#intro h3::after {
+  content: " | ";
+  opacity:0;
+
+  display: inline-block;
+  animation: cursor-blink 1s steps(2);
+  animation-delay:3s;
+  animation-iteration-count: 30;
 }
 
 .placeholder {
@@ -342,6 +329,35 @@ background-image: linear-gradient(
   #000000 100%
   );
 
+}
+.gradient_text{
+background-image: linear-gradient(
+  to bottom,
+  transparent 0%,
+  #6fb1d2 75%,
+  transparent  100%
+  );
+}
+
+.gradient_text_green{
+background-image: linear-gradient(
+  to bottom,
+  transparent 0%,
+  #4ade80 75%,
+  transparent  100%
+  );
+}
+
+
+
+
+.gradientshift {
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-size: 100% 4px;
+  animation: gradientshift 155s linear infinite;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
 }
 
 .h-minustop {
@@ -435,6 +451,28 @@ transform: translateY(0px);
 animation: float2 5s ease-in-out infinite;
 }
 /* ANIMATIONS */
+@keyframes gradientshift  {
+  0% {
+    background-position:0% 0%;
+  }
+  50% {
+    background-position:0% 100%;
+  }
+  100% {
+    background-position:0% 0%;
+  }
+}
+@keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity:.8
+  }
+  100% {
+    opacity:1;
+  }
+}
 
 @keyframes typing {
 from { width: 0 }
@@ -532,10 +570,6 @@ transform: translateX(-100%);
 }
 }
 
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange; }
-}
 
 /* FOOTER */
 .marquee {

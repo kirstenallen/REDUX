@@ -1,4 +1,4 @@
-import React, { useState, lazy } from "react";
+import React, { useState } from "react";
 import { Suspense } from 'react';
 // import Spline from '@splinetool/react-spline';
 import { AnimatePresence  } from "framer-motion";
@@ -25,7 +25,7 @@ const SplineRuntime = React.lazy(() => {
 
 const Navi = (props) => {
 
-  const [stateColor, setStateColor] = useState('gray');
+  const [stateColor, setStateColor] = useState('#434343');
   const [showHome, setHomeShow] = useState(false);
   const [showAbout, setAboutShow] = useState(false);
   const [showWork, setWorkShow] = useState(false);
@@ -46,7 +46,7 @@ const Navi = (props) => {
           return ratioContainer;
 
       }
-  }, 100);
+  }, 5);
 
   function debounce(func, wait, immediate) {
   	var timeout;
@@ -70,10 +70,10 @@ const Navi = (props) => {
   window.addEventListener('onClick', topTop);
 
 var listenScroll = e => {
-    if (window.scrollY > 12000) {
-      setStateColor('white')
+    if (window.scrollY > 10000) {
+      setStateColor('green')
     } else {
-      setStateColor('gray')
+      setStateColor('#434343')
     }
   }
     window.addEventListener('scroll', listenScroll);
@@ -124,7 +124,7 @@ return (
         <Clock />
       </div>
 
-<Suspense fallback={<div className="red-hat"><img className="!w-[25px] !h-[25px] mx-auto block" src={placeHolder} /></div>}>
+<Suspense fallback={<div className="red-hat"><img className="!w-[25px] !h-[25px] mx-auto block" alt="loading navigation" src={placeHolder} /></div>}>
 
             {navLinks.map((navLink) => (
             <li id={navLink.title} className="hover:translate-x-6 border-solid hover:border-transparent border-black border-b sm:hover:translate-x-0 sm:hover:-translate-y-0 transition-all transform-gpu cursor-pointer sm:inline-block sm:px-2 sm:py-2 align-top text-center mx-auto pb-4  "   key={navLink.title}>
@@ -134,7 +134,7 @@ return (
             {    navLink.title === 'console' &&
           <div onClick={() => {setHomeShow(!showHome)}} >
             <SplineRuntime scene="https://prod.spline.design/MJxoGltSbX4HizjE/scene.splinecode" />
-            <div className="absolute top-2 left-5 text-green-400 m-auto text-xs  ">
+            <div className="absolute top-2 left-5 text-green-400 m-auto text-xs">
             {showHome ? '●' : null }
             </div>
             <div style={{ color: '' + stateColor + ''}} className="cursor-pointer rounded-sm  pb-0 text-gray-500 m-auto text-xs red-hat tracking-widest text-center uppercase">

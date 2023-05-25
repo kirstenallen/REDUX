@@ -5,7 +5,29 @@ category: "JOB",
 icon: "",
 description: "Various projects with UPLIFTDesk",
 content: [
-
+{
+  imageurl: './imagesshrunk/UP/email_love.png',
+  caption: "Love Yourself Sale Email Style",
+  year: "2023 - Illustrator / Mailchimp - UpliftDesk"
+},
+{
+  imageurl: './imagesshrunk/UP/email_spring.png',
+  caption: "Spring Sale Email Style",
+  year: "2023 - Illustrator / Mailchimp - UpliftDesk",
+  link: "https://us1.campaign-archive.com/?e=3711b531c6&u=b0b97aad2328dd33074c33384&id=51f35b019b"
+},
+{
+  imageurl: './imagesshrunk/UP/email_ergo.png',
+  caption: "Ergonomic Essentials Sale Email Style",
+  year: "2023 - Illustrator / Mailchimp - UpliftDesk",
+  link: "https://mailchi.mp/upliftdesk/ergo-essentials-sale-continues-save-572-on-standing-desks-190095?e=3711b531c6"
+},
+{
+  imageurl: './imagesshrunk/UP/email_dads.png',
+  caption: "Dads & Grads Sale Email Style",
+  year: "2023 - Illustrator / Mailchimp - UpliftDesk",
+  link: "https://us1.campaign-archive.com/?e=3711b531c6&u=b0b97aad2328dd33074c33384&id=eeb24b0e4f"
+},
 {
 imageurl: "./imagesshrunk/UP/order.gif",
 caption:"Order Confirmation Email Animation",
@@ -25,6 +47,23 @@ year: '2023 - Illustrator / After Effects - UpliftDesk',
 imageurl: "./imagesshrunk/UP/assembly.gif",
 caption:"Assembly Instruction Email Animation",
 year: '2023 - Illustrator / After Effects - UpliftDesk',
+},
+{
+imageurl: "./imagesshrunk/UP/comparison_chart.png",
+caption:"Comparison Chart Design and Development",
+year: '2021 - Bigcommerce Javascript Solution - UpliftDesk',
+link: 'https://xd.adobe.com/view/fdf5d637-c6a2-443e-9453-5581bb4cf395-a8a6/?fullscreen'
+},
+{
+imageurl: "./imagesshrunk/UP/sale_page.png",
+caption:"Sale Page Redesign",
+year: '2023 - Adobe XD - UpliftDesk',
+},
+{
+imageurl: "./imagesshrunk/UP/home_page.jpg",
+caption:"Home Page Redesign",
+year: '2022 - Adobe XD - UpliftDesk',
+link: 'https://xd.adobe.com/view/a40a3e91-2c41-470f-a9c1-065238b1b675-f159/?fullscreen'
 },
 {
 imageurl: "./imagesshrunk/UP/icons_uplift.jpg",
@@ -51,26 +90,6 @@ imageurl: "./imagesshrunk/UP/earthday.jpg",
 caption:"Earth Day Posters / Email concept",
 year: '2023 - Illustrator - UpliftDesk',
 },
-{
-imageurl: "./imagesshrunk/UP/comparison_chart.png",
-caption:"Comparison Chart Design and Development",
-year: '2021 - Bigcommerce Javascript Solution - UpliftDesk',
-link: 'https://xd.adobe.com/view/fdf5d637-c6a2-443e-9453-5581bb4cf395-a8a6/?fullscreen'
-},
-{
-imageurl: "./imagesshrunk/UP/sale_page.png",
-caption:"Sale Page Redesign",
-year: '2023 - Adobe XD - UpliftDesk',
-},
-{
-imageurl: "./imagesshrunk/UP/home_page.jpg",
-caption:"Home Page Redesign",
-year: '2022 - Adobe XD - UpliftDesk',
-link: 'https://xd.adobe.com/view/a40a3e91-2c41-470f-a9c1-065238b1b675-f159/?fullscreen'
-},
-
-
-
 ],
 },
 {
@@ -183,7 +202,12 @@ year: '2023 - Blender - Personal',
 imageurl:"./imagesshrunk/3D/jellyfish.gif",
 caption:"Default Cube Jellyfish",
 year: '2023 - Blender - Personal',
-}
+},
+{
+imageurl:"./imagesshrunk/3D/bunny_alert.gif",
+caption:"The Ballbox Bunny - Alert",
+year: '2023 - Blender - Personal',
+},
 ],
 },
 

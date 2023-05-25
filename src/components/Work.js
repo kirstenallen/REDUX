@@ -67,10 +67,10 @@ const Work = (params, props) =>  {
           {projects.map((project) => (
             <div key={project.title} className="projectContainer mt-16 relative" >
             <div id={project.title} className="imagerow relative flex flex-row flex-wrap w-full white-bg  ">
-              <div className="absolute -top-8 left-0 rounded-lg bg-gray-200 text-sm mx-auto font-bold text-gray-800 pt-2 px-10 pb-4"> > {project.category}
+              <div className="absolute -top-8 left-0 rounded-lg bg-gray-100 text-sm mx-auto font-bold text-gray-800 pt-2 px-10 pb-4"> > {project.category}
               </div>
-              <div key={project.title} className="relative top-0 right-0 left-0 w-full  bg-gray-200 flex flex-nowrap flex-row items-end align-middle p-5 sm:text-xs md:text-sm">
-                    <p className="text-gray-900 text-center red-hat tracking-widest w-full flex flex-nowrap flex-row align-middle  text-xs">
+              <div key={project.title} className="relative top-0 right-0 left-0 w-full  bg-gray-100 flex flex-nowrap flex-row items-end align-middle p-5 sm:text-xs md:text-sm">
+                    <p className="text-gray-400 text-center tracking-[.25em] red-hat w-full flex flex-nowrap flex-row align-middle  text-xs">
                       <span className="w-auto ">{project.category}/</span><span className="w-auto  font-bold">{project.title}/</span><span className="w-auto text-left font-light">{project.description}</span>
                     </p>
                   </div>
@@ -101,7 +101,7 @@ const Work = (params, props) =>  {
       </div>
       <img alt={altToShow} id="lightbox-img" src={imageToShow} style={{pointerEvents:'none'}} />
       <div className="text-center red-hat font-light text-black pt-5 pb-5">{blurbToShow}</div>
-      {linkShow ? <div className="text-center red-hat font-light text-black pt-5 pb-5"><a href={linkShow} target="_blank">live link</a></div> : ''  }
+      {linkShow ? <div className="bg-green-400 w-[200px]  rounded-sm font-bold text-bold text-center red-hat font-light text-white  pt-3 pb-3 mt-5 mb-5 m-auto"><a href={linkShow} target="_blank" rel="noreferrer">full view &nbsp;<i className="fas fa-external-link-alt text-white"></i></a> </div> : ''  }
       </motion.div>
       </div>
   : ''}
